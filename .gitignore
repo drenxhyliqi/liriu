@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backend (Python/FastAPI) - see backend/.env.example
+backend/.env
+# The template itself must ship: backend/README.md's setup step is
+# `cp backend/.env.example backend/.env`, and the `.env*` rule above would
+# otherwise ignore it. It holds placeholders only - never real values.
+!backend/.env.example
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.venv/
+backend/venv/
+*.pyc
+
+# Local scratch kept at the repo root while working - screenshots, reference
+# exports, dropped media. Real site assets live in public/, so nothing at the
+# root should be committed. Root-anchored so public/ is unaffected.
+/*.png
+/*.mp4
