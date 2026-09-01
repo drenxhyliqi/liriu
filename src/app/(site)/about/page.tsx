@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CutFrame } from "@/components/ui/cut-frame";
+import { Timeline } from "@/components/ui/timeline";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 import { company } from "@/lib/constants";
 
@@ -10,9 +12,23 @@ export const metadata: Metadata = {
     "Që nga 2012, NSH LIRIU është zgjeruar nga inxhinieria e trafikut te një ofertë e plotë në sinjalistikë rrugore dhe infrastrukturë - Suharekë, Kosovë.",
 };
 
-// Only verified milestones - see brief section 13: add further entries
-// only once the client confirms them, never invented.
-const milestones = [
+// The spine runs on a five-year cadence from founding to today.
+//
+// !! PLACEHOLDER COPY - NOT CLIENT-CONFIRMED !!
+// Entries marked `placeholder: true` (2017, 2022) were written to fill the
+// timeline until the client supplies the real history. They are deliberately
+// free of checkable claims - no dates beyond the year itself, no project or
+// client names, no headcount, revenue, certifications or contract wins - so
+// nothing here can be false in a way that matters. They still describe the
+// company, so they MUST be replaced or removed before launch.
+// Tracked in HANDOFF.md under "Next steps". 2012, 2013 and "Sot" are
+// confirmed (brief section 13) and must not be reworded to match.
+const milestones: {
+  year: string;
+  title?: string;
+  body?: string;
+  placeholder?: boolean;
+}[] = [
   {
     year: "2012",
     title: "Themelohet kompania",
@@ -24,6 +40,18 @@ const milestones = [
     body: "Kompania zgjerohet në sinjalistikë rrugore - horizontale dhe vertikale - duke ndërtuar bazën e shërbimeve që ofron edhe sot.",
   },
   {
+    year: "2017",
+    title: "Konsolidim i proceseve",
+    body: "Terreni dhe zyra afrohen: vlerësimi, planifikimi dhe mbikëqyrja fillojnë të trajtohen si një zinxhir i vetëm pune, jo si faza të shkëputura nga njëra-tjetra. Ekipet fillojnë të koordinohen që nga vizita e parë në terren, në mënyrë që çdo vendim teknik të kalojë nëpër të njëjtin sy kritik para se të arrijë në fazën e zbatimit.",
+    placeholder: true,
+  },
+  {
+    year: "2022",
+    title: "Cikli i plotë i projektit",
+    body: "Nga projektimi te instalimi dhe kontrolli përfundimtar - çdo hap i një ndërhyrjeje rrugore mbulohet brenda së njëjtës ekipe, me të njëjtin standard në çdo fazë. Kjo qasje e vazhdueshme e mban përgjegjësinë e cilësisë brenda një vendi të vetëm, në vend që të ndahet mes palëve të ndryshme përgjatë projektit.",
+    placeholder: true,
+  },
+  {
     year: "Sot",
     title: "Partner i plotë",
     body: "Ofrojmë shërbime të plota - nga sinjalistika e infrastruktura, deri te konsulenca e mbikëqyrja - për institucione, komuna, kompani ndërtimi dhe kontraktorë privatë.",
@@ -33,17 +61,6 @@ const milestones = [
 export default function AboutPage() {
   return (
     <main className="flex flex-1 flex-col">
-      {/* Reusable notched-corner clip path, applied to the photo below via
-          clip-path: url(#about-clip). Real project photography - road
-          markings freshly laid by LIRIU. */}
-      <svg width="0" height="0" aria-hidden className="absolute">
-        <defs>
-          <clipPath id="about-clip" clipPathUnits="objectBoundingBox">
-            <path d="M0.0998072 1H0.422076H0.749756C0.767072 1 0.774207 0.961783 0.77561 0.942675V0.807325C0.777053 0.743631 0.791844 0.731953 0.799059 0.734076H0.969813C0.996268 0.730255 1.00088 0.693206 0.999875 0.675159V0.0700637C0.999875 0.0254777 0.985045 0.00477707 0.977629 0H0.902473C0.854975 0 0.890448 0.138535 0.850165 0.138535H0.0204424C0.00408849 0.142357 0 0.180467 0 0.199045V0.410828C0 0.449045 0.0136283 0.46603 0.0204424 0.469745H0.0523086C0.0696245 0.471019 0.0735527 0.497877 0.0733523 0.511146V0.915605C0.0723903 0.983121 0.090588 1 0.0998072 1Z" />
-          </clipPath>
-        </defs>
-      </svg>
-
       <section className="border-b border-line px-6 py-20 md:px-10 md:py-28">
         <div className="mx-auto max-w-4xl">
           <p className="mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.14em] text-muted">
@@ -71,7 +88,8 @@ export default function AboutPage() {
       </section>
 
       <section className="px-6 pt-16 md:px-10 md:pt-20">
-        <div className="relative mx-auto aspect-[12/5] w-full max-w-6xl bg-ink" style={{ clipPath: "url(#about-clip)" }}>
+        {/* Real project photography - road markings freshly laid by LIRIU. */}
+        <CutFrame cut="bevel" className="mx-auto aspect-[12/5] w-full max-w-6xl">
           <Image
             src="/about/aboutus.png"
             alt="Sinjalistikë horizontale e sapo vendosur nga NSH LIRIU"
@@ -80,34 +98,34 @@ export default function AboutPage() {
             sizes="(min-width: 1280px) 1152px, 100vw"
             className="object-cover"
           />
-        </div>
+        </CutFrame>
       </section>
 
       <section className="px-6 py-16 md:px-10 md:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-6xl">
           <p className="mb-12 text-xs font-medium uppercase tracking-[0.14em] text-muted">
             Historiku
           </p>
 
-          <ol className="relative flex flex-col gap-14 border-l border-line pl-8 sm:pl-10">
-            {milestones.map((milestone) => (
-              <li key={milestone.year} className="relative">
-                <span
-                  aria-hidden
-                  className="absolute -left-[calc(2rem+5px)] top-1.5 h-[9px] w-[9px] shrink-0 bg-red sm:-left-[calc(2.5rem+5px)]"
-                />
-                <p className="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-                  {milestone.year}
-                </p>
-                <p className="mt-2 font-display text-lg font-medium text-ink">
-                  {milestone.title}
-                </p>
-                <p className="mt-2 max-w-xl leading-relaxed text-muted">
-                  {milestone.body}
-                </p>
-              </li>
-            ))}
-          </ol>
+          {/* Text only - there is no approved project photography yet. The
+              Timeline takes an optional `images` array per entry for when
+              there is; see src/components/ui/timeline.tsx. */}
+          <Timeline
+            data={milestones.map((milestone) => ({
+              title: milestone.year,
+              placeholder: milestone.placeholder,
+              content: milestone.title ? (
+                <>
+                  <p className="font-display text-3xl font-medium text-ink md:text-4xl">
+                    {milestone.title}
+                  </p>
+                  <p className="mt-5 max-w-2xl text-xl leading-relaxed text-muted md:text-2xl">
+                    {milestone.body}
+                  </p>
+                </>
+              ) : null,
+            }))}
+          />
         </div>
       </section>
 

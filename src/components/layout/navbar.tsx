@@ -83,12 +83,10 @@ export function Navbar() {
     };
   }, [menuOpen]);
 
-  // Only the homepage has a full-bleed hero behind the nav; everywhere else
-  // (and once scrolled, or with the mobile menu open) the bar is solid.
-  // Restricted to desktop - on mobile the bar is always solid white, since
-  // the only elements visible there (wordmark, cart, hamburger) read poorly
-  // sitting directly on a photo, and a consistently white bar is cleaner.
-  const overHero = pathname === "/" && !scrolled && !menuOpen && isDesktop;
+  // The bar is solid white on every page and every breakpoint. It used to go
+  // transparent over the homepage's full-bleed video hero; that hero is now a
+  // light section with the video cut into a contained band, so there is no
+  // dark backdrop for white nav text to sit on.
 
   return (
     <>
@@ -97,21 +95,16 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: EASE_OUT }}
         className={cn(
           "fixed inset-x-0 top-0 z-50 h-16 border-b transition-colors duration-300 md:h-20",
-          overHero
-            ? "border-transparent bg-transparent"
-            : scrolled || menuOpen
-              ? cn("border-line bg-paper", isDesktop && "bg-paper/95 backdrop-blur-sm")
-              : "border-transparent bg-paper",
+          scrolled || menuOpen
+            ? cn("border-line bg-paper", isDesktop && "bg-paper/95 backdrop-blur-sm")
+            : "border-transparent bg-paper",
         )}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 md:px-10">
           <Link
             href="/"
             aria-label="LIRIU - Ballina"
-            className={cn(
-              "flex items-center gap-2 font-display text-base font-semibold tracking-tight transition-colors md:text-lg",
-              overHero ? "text-paper" : "text-ink",
-            )}
+            className="flex items-center gap-2 font-display text-base font-semibold tracking-tight text-ink transition-colors md:text-lg"
           >
             <span aria-hidden className="h-2 w-2 shrink-0 bg-red" />
             N.SH LIRIU
@@ -124,21 +117,42 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-label={item.label}
                   className={cn(
-                    "group relative py-2 text-[13px] font-medium uppercase tracking-[0.08em] transition-colors",
-                    overHero
-                      ? cn("text-paper/75 hover:text-paper", active && "text-paper")
-                      : cn("text-ink/65 hover:text-ink", active && "text-ink"),
+                    "group relative block py-2 text-[13px] font-medium uppercase tracking-[0.08em]",
+                    active ? "text-ink" : "text-ink/55",
                   )}
                 >
-                  {item.label}
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "absolute inset-x-0 -bottom-px h-[2px] origin-left scale-x-0 bg-red transition-transform duration-300 ease-out group-hover:scale-x-100",
-                      active && "scale-x-100",
-                    )}
-                  />
+                  {/* Hover rolls the label up and swaps in a red duplicate
+                      from below, echoing the VerticalCutReveal used on the
+                      page headlines. The mask is this wrapper, so the two
+                      copies must stay the same width - hence the shared
+                      whitespace-nowrap and the duplicate being absolutely
+                      positioned rather than in flow.
+
+                      The label is duplicated in the DOM, so the whole visual
+                      pair is hidden from assistive tech and the accessible
+                      name comes from the sr-only copy - same arrangement as
+                      vertical-cut-reveal.tsx - here the name comes from the
+                      link's own aria-label. Without that the link is left
+                      with either no computed name or a doubled one. */}
+                  <span aria-hidden className="relative block overflow-hidden">
+                    <span className="block whitespace-nowrap transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+                      {item.label}
+                    </span>
+                    <span className="absolute left-0 top-0 block translate-y-full whitespace-nowrap text-red transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                      {item.label}
+                    </span>
+                  </span>
+
+                  {/* Active marker: the same small red square used by the
+                      wordmark and the About timeline, not an underline. */}
+                  {active && (
+                    <span
+                      aria-hidden
+                      className="absolute -bottom-0.5 left-1/2 h-[3px] w-[3px] -translate-x-1/2 bg-red"
+                    />
+                  )}
                 </Link>
               );
             })}
@@ -154,20 +168,18 @@ export function Navbar() {
               href="/login"
               aria-label="Identifikohu"
               className={cn(
-                "hidden h-10 w-10 items-center justify-center border transition-colors hover:border-red hover:text-red md:flex",
-                overHero ? "border-paper/40 text-paper" : "border-line text-ink",
+                "hidden h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:border-red hover:text-red md:flex",
               )}
             >
               <User aria-hidden className="h-4 w-4" />
             </Link>
             {/* Cart stays visible at every breakpoint - unlike User/CTA,
                 which fold into the mobile menu. */}
-            <CartButton light={overHero} />
+            <CartButton />
             <Link
               href="/contact"
               className={cn(
-                "hidden items-center border px-5 py-2.5 text-[13px] font-medium uppercase tracking-[0.08em] transition-colors hover:border-red hover:bg-red hover:text-paper md:inline-flex",
-                overHero ? "border-paper text-paper" : "border-ink text-ink",
+                "hidden items-center border border-ink px-5 py-2.5 text-[13px] font-medium uppercase tracking-[0.08em] text-ink transition-colors hover:border-red hover:bg-red hover:text-paper md:inline-flex",
               )}
             >
               Fillo një Projekt
@@ -178,10 +190,7 @@ export function Navbar() {
               onClick={() => setMenuOpen((open) => !open)}
               aria-label={menuOpen ? "Mbyll menynë" : "Hap menynë"}
               aria-expanded={menuOpen}
-              className={cn(
-                "-mr-2 flex h-10 w-10 items-center justify-center transition-colors md:hidden",
-                overHero ? "text-paper" : "text-ink",
-              )}
+              className="-mr-2 flex h-10 w-10 items-center justify-center text-ink transition-colors md:hidden"
             >
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>

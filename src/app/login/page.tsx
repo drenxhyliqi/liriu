@@ -28,24 +28,34 @@ export default function LoginPage() {
        * competing full-bleed blocks.
        */}
       <aside className="relative hidden overflow-hidden bg-ink lg:flex lg:w-[44%] lg:flex-col lg:justify-between xl:w-1/2">
-        <div aria-hidden className="absolute inset-0" style={gridBackground} />
-
-        {/* Road-marking motif: a wide asphalt band with its dashed lane line. */}
-        <svg
-          aria-hidden
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="pointer-events-none absolute inset-0 h-full w-full"
-        >
-          <line x1="14" y1="112" x2="78" y2="-12" stroke="white" strokeOpacity="0.04" strokeWidth="26" />
-          <line x1="14" y1="112" x2="78" y2="-12" stroke="white" strokeOpacity="0.18" strokeWidth="0.3" strokeDasharray="3 3" />
-          <line x1="56" y1="112" x2="120" y2="-12" stroke="var(--color-red)" strokeOpacity="0.45" strokeWidth="0.3" strokeDasharray="2 2.4" />
-        </svg>
-
+        {/* Real photography - a night crossing with its own red signal -
+            so the drawn road-marking motif and the decorative red glow that
+            used to stand in for it are both gone; the glow in particular
+            would have muddied the real light in the frame.
+            The shot is already near-black at the top and bright white
+            across the crossing at the bottom, so the scrim is weighted the
+            same way: barely there over the sky behind the logo, heavy over
+            the stripes behind the slogan and the footer rule. Panel copy is
+            white, so the image is never shown unmasked.
+            Anchored to object-bottom: the subject (the crossing and the
+            signal) sits in the lower two thirds of a portrait frame, so a
+            centred crop drops it entirely on a tall viewport and leaves a
+            panel of empty night sky. */}
+        <Image
+          src="/login/loginimage.jpeg"
+          alt=""
+          fill
+          priority
+          sizes="(min-width: 1280px) 50vw, 44vw"
+          quality={85}
+          className="object-cover object-bottom"
+        />
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-1/4 top-1/3 h-[540px] w-[540px] rounded-full bg-red/12 blur-[140px]"
+          className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/65 to-ink/92"
         />
+
+        <div aria-hidden className="absolute inset-0" style={gridBackground} />
 
         <div className="relative flex items-center gap-3 p-10 xl:p-14">
           <Image
@@ -68,7 +78,7 @@ export default function LoginPage() {
           <p className="max-w-md font-display text-3xl font-semibold leading-[1.15] tracking-tight text-paper xl:text-4xl">
             {company.slogan.sq}
           </p>
-          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-paper/60">
+          <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-paper/75">
             Menaxho kategoritë, produktet dhe përmbajtjen e faqes nga një vend i
             vetëm.
           </p>

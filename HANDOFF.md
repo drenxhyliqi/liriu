@@ -138,19 +138,29 @@ before this was committed — the repo has no fake persisted state.
 2. **Build the admin CMS UI** for categories/products/variants (create/edit
    forms + the Cloudinary upload step) — the backend endpoints exist, the
    admin dashboard UI shell exists, they're just not connected yet.
-3. **Get real content from the client**: product photography, verified
+3. **Replace the placeholder About timeline entries.** `/about`'s history
+   spine runs on a five-year cadence (2012, 2013, 2017, 2022, Sot). The
+   2017 and 2022 entries are **written copy, not client-confirmed history**
+   - added on request to fill the timeline until the real one arrives. They
+   were deliberately written without checkable claims (no project or client
+   names, no headcount, revenue, certifications or contract wins), but they
+   still describe the company and must be replaced or removed before launch.
+   Find them with `placeholder: true` in `src/app/(site)/about/page.tsx`, or
+   in a rendered page via `[data-placeholder]`. 2012, 2013 and "Sot" are
+   confirmed - leave those alone.
+4. **Get real content from the client**: product photography, verified
    specs/certifications if any exist, project case studies (with explicit
    publish permission — see `Project.publishApproved` in
    `src/types/index.ts`), client logos (same — `Client.publishApproved`),
    service page copy (`shortDescription`/`overview`/`capabilities`/
    `process` are all currently unset on purpose).
-4. **Replace placeholder social/contact data** in
+5. **Replace placeholder social/contact data** in
    `src/lib/social-placeholder.ts` with the real Facebook page, WhatsApp
    business number, and email once confirmed.
-5. **Contact form email delivery** — currently receives and validates but
+6. **Contact form email delivery** — currently receives and validates but
    doesn't send anywhere. Needs a confirmed destination address + a
    provider (e.g. Resend).
-6. **Deploy.** Neither the frontend nor the backend has a real deployment
+7. **Deploy.** Neither the frontend nor the backend has a real deployment
    target picked yet (Vercel is the obvious frontend fit given Next.js;
    the backend's Docker setup should run anywhere that runs containers).
 
