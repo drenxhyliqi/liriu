@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import {
-  ChevronDown,
   ChevronRight,
   Lightbulb,
   Milestone,
@@ -29,7 +28,6 @@ interface CategorySidebarProps {
 }
 
 export function CategorySidebar({ activeGroupSlug, activeProductSlug }: CategorySidebarProps) {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
   // Whichever group is currently active starts expanded, so a product page
   // shows you where it sits in the tree.
   const [expandedGroups, setExpandedGroups] = React.useState<Set<string>>(
@@ -51,22 +49,9 @@ export function CategorySidebar({ activeGroupSlug, activeProductSlug }: Category
   return (
     <aside className="mb-8 shrink-0 lg:mb-0 lg:w-72">
       <div className="border border-line bg-paper shadow-sm">
-        <button
-          type="button"
-          onClick={() => setMobileOpen((open) => !open)}
-          className="flex w-full items-center justify-between border-b border-line px-5 py-4 text-left font-display text-base font-semibold text-ink lg:pointer-events-none"
-        >
-          Oferta Jonë
-          <ChevronDown
-            aria-hidden
-            className={cn("h-4 w-4 text-muted transition-transform lg:hidden", mobileOpen && "rotate-180")}
-          />
-        </button>
-
-        <nav aria-label="Kategoritë e produkteve" className={cn(mobileOpen ? "block" : "hidden", "lg:block")}>
+        <nav aria-label="Kategoritë e produkteve">
           <Link
             href="/products"
-            onClick={() => setMobileOpen(false)}
             className={cn(
               "flex w-full items-center justify-between border-b border-line px-5 py-4 text-left text-[15px] font-medium text-ink transition-colors hover:bg-surface",
               activeGroupSlug === null && "bg-surface",
@@ -87,8 +72,7 @@ export function CategorySidebar({ activeGroupSlug, activeProductSlug }: Category
                 <div className={cn("flex items-center transition-colors", active && "bg-surface")}>
                   <Link
                     href={`/products?category=${group.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex flex-1 items-center gap-3 py-4 pl-5 pr-2 text-left hover:bg-surface"
+                            className="flex flex-1 items-center gap-3 py-4 pl-5 pr-2 text-left hover:bg-surface"
                   >
                     <Icon
                       aria-hidden
@@ -121,8 +105,7 @@ export function CategorySidebar({ activeGroupSlug, activeProductSlug }: Category
                         <Link
                           key={product.slug}
                           href={`/products/${product.slug}`}
-                          onClick={() => setMobileOpen(false)}
-                          className={cn(
+                                        className={cn(
                             "flex items-center justify-between py-2.5 pl-12 pr-5 text-[14px] transition-colors hover:text-red",
                             productActive ? "font-medium text-red" : "text-ink/75",
                           )}

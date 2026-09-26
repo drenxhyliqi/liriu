@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 interface AddToCartButtonProps {
   productSlug: string;
   variantSlug?: string;
+  signSlug?: string;
+  image?: { src: string; alt: string };
   name: string;
   groupName: string;
   variant?: "primary" | "compact";
@@ -17,6 +19,8 @@ interface AddToCartButtonProps {
 export function AddToCartButton({
   productSlug,
   variantSlug,
+  signSlug,
+  image,
   name,
   groupName,
   variant = "primary",
@@ -29,11 +33,12 @@ export function AddToCartButton({
     event.preventDefault();
     event.stopPropagation();
     addItem({
-      key: variantSlug ? `${productSlug}:${variantSlug}` : productSlug,
+      key: [productSlug, variantSlug, signSlug].filter(Boolean).join(":"),
       productSlug,
       variantSlug,
       name,
       groupName,
+      image,
     });
     setJustAdded(true);
     window.setTimeout(() => setJustAdded(false), 1600);
@@ -47,7 +52,9 @@ export function AddToCartButton({
         aria-label={`Shto ${name} në porosi`}
         className={cn(
           "relative flex h-9 w-9 items-center justify-center border transition-colors",
-          justAdded ? "border-red bg-red text-paper" : "border-line text-ink hover:border-ink",
+          justAdded
+            ? "border-red bg-red text-paper"
+            : "border-line text-ink hover:border-ink",
           className,
         )}
       >
@@ -58,7 +65,11 @@ export function AddToCartButton({
             {/* A bare "+" reads as generic (edit? expand? favorite?). A cart
                 icon states the action; the badge keeps "+" as the at-a-glance
                 cue that this specific control adds rather than opens it. */}
-            <ShoppingCart aria-hidden className="h-[18px] w-[18px]" strokeWidth={1.75} />
+            <ShoppingCart
+              aria-hidden
+              className="h-[18px] w-[18px]"
+              strokeWidth={1.75}
+            />
             <span
               aria-hidden
               className="absolute right-0.5 top-0.5 flex h-3.5 w-3.5 items-center justify-center bg-red text-paper"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   title: "NSH LIRIU",
   description:
     "Inxhinieri trafiku, sinjalistikë rrugore dhe infrastrukturë - Suharekë, Kosovë.",
+};
+
+// Pins Safari/Chrome mobile toolbar tint to white so the full-bleed red
+// homepage panel is never sampled as the browser chrome color.
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 // Deliberately bare - no Navbar/Footer here. Those live in

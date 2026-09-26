@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { FacebookIcon, WhatsAppIcon } from "@/components/icons/social-icons";
+import { CookiePreferencesButton } from "@/components/layout/cookie-preferences-button";
 import { services } from "@/lib/data/services";
 import { company, mainNav } from "@/lib/constants";
 import { socialPlaceholder } from "@/lib/social-placeholder";
@@ -98,8 +99,25 @@ export function Footer() {
           <p>
             © {year} {company.name}. Të gjitha të drejtat e rezervuara.
           </p>
-          <p>{company.location}</p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            <li><Link href="/privacy" className="transition-colors hover:text-red">Politika e Privatësisë</Link></li>
+            <li><Link href="/cookies" className="transition-colors hover:text-red">Politika e Cookies</Link></li>
+            <li><Link href="/terms" className="transition-colors hover:text-red">Kushtet e Përdorimit</Link></li>
+            <li><CookiePreferencesButton className="transition-colors hover:text-red" /></li>
+          </ul>
         </div>
+
+        <p className="mt-6 text-center text-xs text-paper/40">
+          Site by{" "}
+          <Link
+            href="https://www.venight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-red"
+          >
+            Venight
+          </Link>
+        </p>
       </div>
     </footer>
   );

@@ -1,23 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  AlertTriangle,
-  ArrowUpRight,
-  ChevronDown,
-  Compass,
-  Fence,
-  Lightbulb,
-  MapPin,
-  Milestone,
-  type LucideIcon,
-  Route,
-  Signpost,
-  SquareParking,
-  TrafficCone,
-} from "lucide-react";
+import { CardGrid } from "@/components/sections/card-grid";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { AddToCartButton } from "@/components/sections/add-to-cart-button";
 import { CategorySidebar } from "@/components/sections/category-sidebar";
 import {
   getProductBySlug,
@@ -25,26 +10,6 @@ import {
   productGroups,
   products,
 } from "@/lib/data/products";
-
-const productIcons: Record<string, LucideIcon> = {
-  "traffic-signs": AlertTriangle,
-  "information-signs": Signpost,
-  "street-name-plates": MapPin,
-  "poles-brackets": Milestone,
-  "signage-portals": Route,
-  "led-signage": Lightbulb,
-  "traffic-cones": TrafficCone,
-  delineators: Compass,
-  barriers: Fence,
-  "traffic-mirrors": Route,
-  "parking-solutions": SquareParking,
-};
-
-const gridBackground = {
-  backgroundImage:
-    "linear-gradient(to right, rgba(10,10,10,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,10,10,0.05) 1px, transparent 1px)",
-  backgroundSize: "26px 26px",
-};
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -69,7 +34,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
 
   const group = productGroups.find((g) => g.slug === product.groupSlug);
   const variants = getVariantsByProduct(product.slug);
-  const Icon = productIcons[product.slug] ?? Signpost;
+  const hasSigns = variants.some((variant) => variant.items?.length);
   const otherProducts = group
     ? products.filter((p) => p.groupSlug === group.slug && p.slug !== product.slug)
     : [];
@@ -82,10 +47,6 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-4 border border-line bg-surface px-6 py-5">
-              <span className="inline-flex items-center gap-2 border border-line bg-paper px-4 py-2 text-[13px] font-medium uppercase tracking-[0.06em] text-ink">
-                Oferta Jonë
-                <ChevronDown aria-hidden className="h-3.5 w-3.5 text-muted" />
-              </span>
               <h1 className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
                 {product.name}
               </h1>
@@ -106,38 +67,35 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
             </p>
 
             {variants.length > 0 ? (
-              <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
-                {variants.map((variant) => (
-                  <div key={variant.slug}>
-                    <Link href={`/products/${product.slug}/${variant.slug}`} className="group block">
-                      <div
-                        className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border border-line bg-paper shadow-sm"
-                        style={gridBackground}
-                      >
-                        <Icon aria-hidden className="h-14 w-14 text-ink/15" strokeWidth={1} />
-                        <ArrowUpRight
-                          aria-hidden
-                          className="absolute right-4 top-4 h-5 w-5 -translate-x-1 translate-y-1 text-red opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
-                        />
-                      </div>
-                    </Link>
-                    <div className="mt-5 flex items-start justify-between gap-3">
-                      <Link href={`/products/${product.slug}/${variant.slug}`} className="group min-w-0">
-                        <h3 className="truncate font-display text-lg font-semibold tracking-tight text-ink transition-colors group-hover:text-red">
-                          {variant.name}
-                        </h3>
-                      </Link>
-                      <AddToCartButton
-                        variant="compact"
-                        productSlug={product.slug}
-                        variantSlug={variant.slug}
-                        name={variant.name}
-                        groupName={product.name}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <CardGrid
+                iconKey={product.slug}
+                searchable={hasSigns}
+                searchPool={variants.flatMap((variant) =>
+                  (variant.items ?? []).map((item) => ({
+                    key: `${variant.slug}:${item.slug}`,
+                    href: `/products/${product.slug}/${variant.slug}/${item.slug}`,
+                    name: item.name,
+                    keywords: item.keywords,
+                    image: item.image,
+                    tag: variant.name,
+                    cart: {
+                      productSlug: product.slug,
+                      variantSlug: variant.slug,
+                      signSlug: item.slug,
+                      groupName: variant.name,
+                    },
+                  })),
+                )}
+                cards={variants.map((variant) => ({
+                  key: variant.slug,
+                  href: `/products/${product.slug}/${variant.slug}`,
+                  name: variant.name,
+                  image: variant.image,
+                  cart: variant.items
+                    ? undefined
+                    : { productSlug: product.slug, variantSlug: variant.slug, groupName: product.name },
+                }))}
+              />
             ) : (
               <div className="mt-10 border border-line p-8 md:p-12">
                 <p className="font-display text-lg font-medium text-ink">

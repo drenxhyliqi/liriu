@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
@@ -94,8 +95,19 @@ export function OrderRequest() {
         </p>
         <ul className="flex flex-col">
           {items.map((item) => (
-            <li key={item.key} className="flex items-start justify-between gap-3 border-b border-line py-4">
-              <div className="min-w-0">
+            <li key={item.key} className="flex items-start gap-4 border-b border-line py-4">
+              <div className="relative h-20 w-20 shrink-0 border border-line bg-paper">
+                        {item.image ? (
+                          <Image
+                            src={item.image.src}
+                            alt={item.image.alt}
+                            fill
+                            sizes="80px"
+                            className="object-contain p-1.5"
+                          />
+                        ) : null}
+                      </div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs uppercase tracking-[0.06em] text-red">{item.groupName}</p>
                 <p className="mt-1 text-[15px] font-medium text-ink">{item.name}</p>
                 <div className="mt-2 flex items-center gap-2">
@@ -122,7 +134,7 @@ export function OrderRequest() {
                 type="button"
                 onClick={() => removeItem(item.key)}
                 aria-label={`Hiq ${item.name}`}
-                className="mt-1 text-muted transition-colors hover:text-red"
+                className="ml-auto mt-1 text-muted transition-colors hover:text-red"
               >
                 <Trash2 className="h-4 w-4" />
               </button>

@@ -1,4 +1,21 @@
-import type { Product, ProductGroup, ProductVariant } from "@/types";
+import type { Product, ProductGroup, ProductItem, ProductVariant } from "@/types";
+import { mandatorySigns } from "@/lib/data/mandatory-signs";
+import { notificationSigns } from "@/lib/data/notification-signs";
+import { prohibitorySigns } from "@/lib/data/prohibitory-signs";
+import { dangerSigns } from "@/lib/data/warning-signs";
+
+// Signs are defined once (in the sign data files) and referenced by slug, so
+// the same sign can be listed in every category it belongs to.
+const signPool = [...prohibitorySigns, ...notificationSigns, ...mandatorySigns, ...dangerSigns];
+
+function pick(...slugs: string[]): ProductItem[] {
+  return slugs.map((slug) => {
+    const sign = signPool.find((item) => item.slug === slug);
+    if (!sign) throw new Error(`Unknown sign slug: ${slug}`);
+    return sign;
+  });
+}
+
 
 // STARTER STRUCTURE - CLIENT INFORMATION REQUIRED.
 // Groups and product types are drawn from (a) LIRIU's own confirmed
@@ -26,18 +43,36 @@ export const products: Product[] = [
     name: "Shenja Trafiku",
     groupSlug: "vertical-signage",
     description: "Shenja rregullative, paralajmëruese dhe udhëzuese sipas standardeve rrugore.",
+    image: {
+      src: "/categories/sinjalistike-vertikale.webp",
+      alt: "Shenja trafiku vertikale përgjatë një rruge",
+      width: 1448,
+      height: 1086,
+    },
   },
   {
     slug: "information-signs",
     name: "Shenja Informacioni & Orientimi",
     groupSlug: "vertical-signage",
     description: "Tabela orientuese dhe informative për drejtim dhe destinacion.",
+    image: {
+      src: "/categories/shenja-informacioni-orientimi.webp",
+      alt: "Shenja informacioni dhe orientimi: drejtime, parkim, karburant, hotel dhe restorant",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "street-name-plates",
     name: "Tabela me Emra Rrugësh",
     groupSlug: "vertical-signage",
     description: "Sinjalistikë identifikuese për rrugë, lagje dhe zona urbane.",
+    image: {
+      src: "/categories/tabela-me-emra-rrugesh-qytet.webp",
+      alt: "Tabela me emra rrugësh në shtylla, në një sheshi qyteti",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "poles-brackets",
@@ -56,6 +91,12 @@ export const products: Product[] = [
     name: "Sinjalistikë me Ndriçim LED",
     groupSlug: "illuminated",
     description: "Sinjalistikë e ndriçuar për shikueshmëri gjatë natës dhe kushteve të vështira.",
+    image: {
+      src: "/categories/sinjalistike-led.webp",
+      alt: "Panel LED me shenjë punimesh në rrugë natën, me kone dhe shenja kthese",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "traffic-cones",
@@ -92,28 +133,59 @@ export const products: Product[] = [
 export const productVariants: ProductVariant[] = [
   // Shenja Trafiku - standard regulatory sign categories
   {
-    slug: "ndalese",
-    name: "Shenja Ndalese",
+    slug: "urdhera-te-prera",
+    name: "Shenjat e Urdhërave të Prera",
     productSlug: "traffic-signs",
-    description: "Shenja që ndalojnë ose kufizojnë veprime specifike në rrugë, sipas standardeve rregullative.",
+    description:
+      "Shenjat e komunikacionit për urdhra të prera u japin në dijeni pjesëmarrësve në komunikacion në rrugë për ndalesat, për kufizimet dhe obligimet të cilave ata doemos duhet t'u përmbahen. Shenjat e urdhrave të prera vendosen drejtpërdrejt para vendit nga i cili pjesëmarrësit në trafik obligohen t'u përmbahen urdhëresave të shprehura me shenjat e komunikacionit. Këto shenja kanë vlerë deri te udhëkryqi pas shenjës, përkatësisht deri te shenja e ardhshme që e ndërron (shfuqizon) urdhëresën e prerë. Shenjat e urdhrave të prera kanë formë rrethi.\n\nShenjat e urdhrave të prera ndahen në:\n• Shenja për ndalim, gjegjësisht kufizim - ngjyrën bazë e kanë të bardhë me teh të kuq.\n• Shenja për obligim - ngjyrë bazë e kanë të kaltër të mbyllur, ndërsa simbolet janë me ngjyrë të bardhë.",
+    image: {
+      src: "/categories/shenja-ndalese.webp",
+      alt: "Shenja e ndalimit STOP",
+      width: 800,
+      height: 800,
+    },
+    items: prohibitorySigns,
   },
   {
     slug: "paralajmeruese",
     name: "Shenja Paralajmëruese",
     productSlug: "traffic-signs",
-    description: "Shenja që njoftojnë drejtuesit për rreziqe ose kushte të veçanta përpara tyre.",
+    description:
+      "Shenjat e komunikacionit për rrezik shërbejnë që pjesëmarrësit në komunikacion të paralajmërohen për rrezikun që u kanoset në vend të caktuar, gjegjësisht në një pjesë të rrugës, dhe të lajmërohen për natyrën e atij rreziku. Shenjat për rrezik kanë formë të trekëndëshit barabrinjës. Ngjyrën bazë e kanë të bardhë, simbolet janë të paraqitura me ngjyrë të zezë, ndërsa tehet i kanë me ngjyrë të kuqe. Jashtë vendbanimit, shenjat e rrezikut sipas rregullave vihen prej 150 deri në 250 m para vendit të rrezikshëm në rrugë.",
+    image: {
+      src: "/categories/shenja-paralajmeruese.webp",
+      alt: "Shenja paralajmëruese për kthesa të njëpasnjëshme",
+      width: 800,
+      height: 800,
+    },
+    items: dangerSigns,
   },
   {
-    slug: "urdheruese",
-    name: "Shenja Urdhëruese",
+    slug: "detyrimit",
+    name: "Shenjat e Detyrimit",
     productSlug: "traffic-signs",
     description: "Shenja që përcaktojnë një sjellje të detyrueshme, si drejtimi i lëvizjes apo shpejtësia minimale.",
+    image: {
+      src: "/categories/shenja-urdheruese.webp",
+      alt: "Shenja urdhëruese e drejtimit përpara",
+      width: 800,
+      height: 800,
+    },
+    items: mandatorySigns,
   },
   {
-    slug: "perparesie",
-    name: "Shenja Përparësie",
+    slug: "lajmerimit",
+    name: "Shenjat e Lajmërimit",
     productSlug: "traffic-signs",
-    description: "Shenja që rregullojnë përparësinë e kalimit në kryqëzime dhe ngushtime rruge.",
+    description:
+      "Shenjat e lajmërimit u japin pjesëmarrësve në komunikacion lajmërimet e nevojshme për rrugën nëpër të cilën qarkullojnë, vendbanimet nëpër të cilat kalon rruga, largësinë deri te ato vende, objekte apo shërbime që gjenden përgjatë rrugës, për shfuqizimin e shenjave të urdhrave të prera, si dhe lajmërime të tjera që mund të jenë të nevojshme. Këto shenja kanë formë rrethi, katrori apo këndrejti. Ngjyra themelore e shenjave për lajmërim është e bardhë apo e verdhë ndriçuese, me simbole dhe mbishkrime me ngjyrë të zezë, gjegjësisht e kaltër e errët me simbole dhe mbishkrime me ngjyrë të bardhë dhe të zezë.",
+    image: {
+      src: "/categories/shenja-perparesie.webp",
+      alt: "Shenja e rrugës me përparësi",
+      width: 800,
+      height: 800,
+    },
+    items: notificationSigns,
   },
 
   // Shenja Informacioni & Orientimi
@@ -121,18 +193,68 @@ export const productVariants: ProductVariant[] = [
     slug: "drejtimi",
     name: "Shenja Drejtimi",
     productSlug: "information-signs",
+    items: pick(
+      "rreshtimi-i-automjeteve",
+      "rruge-pa-dalje",
+      "udhetregues-per-anashkalim",
+      "kahe-per-anashkalim-per-disa-lloje-te-automjetev",
+      "kahe-per-anashkalim-per-disa-lloje-te-automjetev-84",
+      "shenja-e-largesise-deri-te-dalja-100-200-300-m",
+      "shenje-per-numrin-e-daljes-ose-nyjes",
+      "shenje-per-nyje-te-autostradave",
+    ),
     description: "Tabela që udhëzojnë drejtuesit drejt destinacioneve dhe rrugëve kryesore.",
+    image: {
+      src: "/categories/shenja-drejtimi.webp",
+      alt: "Shenja e drejtimit të lëvizjes përpara",
+      width: 800,
+      height: 800,
+    },
   },
   {
     slug: "destinacioni",
     name: "Shenja Destinacioni",
     productSlug: "information-signs",
+    image: pick("paraudhetregues")[0].image,
+    items: pick(
+      "rreshtimi-i-automjeteve-me-emertim-te-vendbanime",
+      "parashenje-per-anashkalim",
+      "paraudhetregues",
+      "tabele-paraudhetreguese-per-dalje",
+    ),
     description: "Tabela që tregojnë distancën dhe drejtimin për qytete, zona apo objekte kryesore.",
   },
   {
     slug: "sherbimesh",
     name: "Shenja Shërbimesh",
     productSlug: "information-signs",
+    image: pick("spital")[0].image,
+    items: pick(
+      "spital",
+      "stacion-policor",
+      "stacion-per-ndihme-te-pare",
+      "taxi-vendqendrim",
+      "pompe-benzini",
+      "telefon",
+      "punetori-per-rregullim-te-automjeteve-oficine",
+      "uje-i-pijshem",
+      "informata",
+      "restorant",
+      "kafeteri",
+      "tualet-wc",
+      "hotel-ose-motel",
+      "teren-per-kamping-ne-kamp-shtepiza",
+      "teren-per-kamping-nen-tenda",
+      "teren-per-kamping-me-automjete",
+      "shtepi-malore",
+      "teren-i-rregulluar-per-piknik",
+      "vendqendrim-per-autobuse",
+      "aeroport",
+      "stacion-per-tramvaj",
+      "port-detar-traekt",
+      "vendparkim",
+      "garazhe",
+    ),
     description: "Tabela informuese për shërbime përgjatë rrugës, si parkime apo pika interesi.",
   },
 
@@ -141,12 +263,25 @@ export const productVariants: ProductVariant[] = [
     slug: "standarde",
     name: "Tabela Standarde",
     productSlug: "street-name-plates",
+    image: pick("numri-i-autostrades")[0].image,
+    items: pick(
+      "numri-i-autostrades",
+      "numri-i-rruges-nderkombetare",
+      "numri-i-rruges-ekspres-rruge-magjistrale-dhe-rru",
+      "numri-i-rruges-regjionale",
+    ),
     description: "Tabela identifikuese për emrin e rrugës, në format standard.",
   },
   {
     slug: "sheshe-lagje",
     name: "Tabela për Sheshe & Lagje",
     productSlug: "street-name-plates",
+    image: {
+      src: "/categories/tabela-per-sheshe.webp",
+      alt: "Tabelë për shesh: Sheshi / Trg. Gjergj Kastrioti Skënderbeu",
+      width: 500,
+      height: 230,
+    },
     description: "Tabela identifikuese për shesh, lagje apo zonë urbane specifike.",
   },
 
@@ -217,12 +352,14 @@ export const productVariants: ProductVariant[] = [
     slug: "shtylla-delineatore",
     name: "Shtylla Delineatore",
     productSlug: "delineators",
+    image: { src: "/categories/shtylla-delineatore.webp", alt: "Shtyllë delineatore fleksibile me shirita reflektuese", width: 178, height: 715 },
     description: "Shtylla anësore që ndihmojnë në orientimin e drejtuesve përgjatë rrugës.",
   },
   {
     slug: "reflektore-anesore",
     name: "Reflektorë Anësorë",
     productSlug: "delineators",
+    image: { src: "/categories/reflektore-anesore.webp", alt: "Reflektor anësor me shenjë kthese në shtyllë", width: 427, height: 800 },
     description: "Elemente reflektuese për shikueshmëri të përmirësuar gjatë natës.",
   },
 
@@ -259,6 +396,18 @@ export const productVariants: ProductVariant[] = [
     slug: "sinjalistike-parkimi",
     name: "Sinjalistikë Parkimi",
     productSlug: "parking-solutions",
+    image: pick("vendparkim")[0].image,
+    items: pick(
+      "parkimi",
+      "ndaljes-parkimit",
+      "parkim-tek",
+      "parkim-cift",
+      "zone-ku-kufizohet-kohezgjatja-e-parkimit",
+      "mbarimi-i-zones-ku-kufizohet-kohezgjatja-e-parki",
+      "vendparkim",
+      "garazhe",
+      "kufizim-kohor-i-parkimit",
+    ),
     description: "Shenja që organizojnë dhe rregullojnë hapësirat e parkimit.",
   },
   {
@@ -267,6 +416,7 @@ export const productVariants: ProductVariant[] = [
     productSlug: "parking-solutions",
     description: "Barriera për kontrollin e hyrjes dhe daljes në hapësira parkimi.",
   },
+
 ];
 
 export function getProductsByGroup(groupSlug: string) {
@@ -285,4 +435,8 @@ export function getVariant(productSlug: string, variantSlug: string) {
   return productVariants.find(
     (variant) => variant.productSlug === productSlug && variant.slug === variantSlug,
   );
+}
+
+export function getItem(productSlug: string, variantSlug: string, itemSlug: string) {
+  return getVariant(productSlug, variantSlug)?.items?.find((item) => item.slug === itemSlug);
 }

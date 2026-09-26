@@ -48,6 +48,15 @@ export interface Project {
   publishApproved: boolean;
 }
 
+export interface ProductImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** "contain" for cut-out product shots; default "cover" for photos. */
+  fit?: "cover" | "contain";
+}
+
 export interface ProductGroup {
   slug: string;
   name: string;
@@ -61,6 +70,16 @@ export interface Product {
    * spec claim. Verified capabilities/materials/certifications require
    * client confirmation, same as services. */
   description: string;
+  image?: ProductImage;
+}
+
+export interface ProductItem {
+  slug: string;
+  name: string;
+  image: ProductImage;
+  description?: string;
+  /** Extra words the search should match (e.g. a common name not in the title). */
+  keywords?: string;
 }
 
 export interface ProductVariant {
@@ -70,15 +89,23 @@ export interface ProductVariant {
   /** Short, generic description of this design/category - standard
    * regulatory or industry terminology, not a specific LIRIU SKU claim. */
   description?: string;
+  image?: ProductImage;
+  /** When defined (even empty), this variant is a sub-category - not a
+   * product on its own: its page lists these items, which are the real,
+   * cart-able products. When undefined, the variant itself is the product. */
+  items?: ProductItem[];
 }
 
 export interface CartItem {
-  /** Composite key: `${productSlug}` or `${productSlug}:${variantSlug}`. */
+  /** Composite key: `${productSlug}`, `${productSlug}:${variantSlug}` or
+   * `${productSlug}:${variantSlug}:${signSlug}`. */
   key: string;
   productSlug: string;
   variantSlug?: string;
   name: string;
   groupName: string;
+  /** Thumbnail shown in the cart so the user sees what they are requesting. */
+  image?: { src: string; alt: string };
   quantity: number;
 }
 
