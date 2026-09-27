@@ -79,12 +79,24 @@ export const products: Product[] = [
     name: "Shtylla & Mbajtëse",
     groupSlug: "vertical-signage",
     description: "Struktura montimi për vendosjen e qëndrueshme të sinjalistikës.",
+    image: {
+      src: "/categories/shtylla-mbajtese.webp",
+      alt: "Shtylla metalike me mbajtëse për sinjalistikë rrugore",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "signage-portals",
     name: "Portale Sinjalistike",
     groupSlug: "illuminated",
     description: "Struktura mbi rrugë për sinjalistikë me shikueshmëri të lartë.",
+    image: {
+      src: "/categories/portale-sinjalistike.webp",
+      alt: "Portal sinjalistik ndriçues mbi autostradë me tabela drejtimi",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "led-signage",
@@ -103,30 +115,60 @@ export const products: Product[] = [
     name: "Kone Trafiku",
     groupSlug: "road-safety",
     description: "Përcaktim i përkohshëm i zonave të punës dhe devijimeve.",
+    image: {
+      src: "/categories/kone-trafiku.webp",
+      alt: "Kone trafiku përgjatë një zone punimesh në rrugë, me shenja paralajmëruese",
+      width: 1200,
+      height: 800,
+    },
   },
   {
     slug: "delineators",
     name: "Delineatorë & Reflektorë",
     groupSlug: "road-safety",
     description: "Shenjues anësorë për orientim dhe siguri gjatë natës.",
+    image: {
+      src: "/categories/delineatore-mbrojtese.webp",
+      alt: "Delineatorë reflektues përgjatë një mbrojtëseje rrugore",
+      width: 1200,
+      height: 675,
+    },
   },
   {
     slug: "barriers",
     name: "Pengesa & Barriera",
     groupSlug: "road-safety",
     description: "Ndarje dhe mbrojtje fizike për zona pune dhe kantiere.",
+    image: {
+      src: "/categories/pengesa-barriera.webp",
+      alt: "Barriera plastike me shirita reflektues në një zonë punimesh",
+      width: 1200,
+      height: 675,
+    },
   },
   {
     slug: "traffic-mirrors",
     name: "Pasqyra Trafiku",
     groupSlug: "street-furniture",
     description: "Pasqyra për shikueshmëri në kryqëzime dhe kthesa të kufizuara.",
+    image: {
+      src: "/categories/kone-pasqyra-trafiku.webp",
+      alt: "Shenja e drejtimit dhe pasqyrë konvekse trafiku në një kthesë rrugore",
+      width: 1200,
+      height: 675,
+    },
   },
   {
     slug: "parking-solutions",
     name: "Zgjidhje për Parkim",
     groupSlug: "street-furniture",
     description: "Sinjalistikë dhe pajisje për organizimin e hapësirave të parkimit.",
+    image: {
+      src: "/categories/zgjidhje-parkimi.webp",
+      alt: "Hyrje parkimi me barrierë, tabela dhe shtylla udhëzuese",
+      width: 1200,
+      height: 675,
+    },
   },
 ];
 
@@ -291,18 +333,39 @@ export const productVariants: ProductVariant[] = [
     name: "Shtylla Metalike",
     productSlug: "poles-brackets",
     description: "Struktura vertikale për montimin e qëndrueshëm të sinjalistikës rrugore.",
+    image: {
+      src: "/categories/shtylla-metalike.webp",
+      alt: "Shtyllë metalike me pllakë bazë për montim sinjalistike",
+      width: 201,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "mbajtese-njeshe",
     name: "Mbajtëse për Shenja të Vetme",
     productSlug: "poles-brackets",
     description: "Mbajtëse për montimin e një shenje të vetme mbi shtyllë.",
+    image: {
+      src: "/categories/mbajtese-njeshe.webp",
+      alt: "Shtyllë me mbajtëse për një shenjë të vetme",
+      width: 276,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "mbajtese-shumefishta",
     name: "Mbajtëse për Shenja të Shumëfishta",
     productSlug: "poles-brackets",
     description: "Mbajtëse që lejojnë montimin e disa shenjave njëkohësisht mbi të njëjtën shtyllë.",
+    image: {
+      src: "/categories/mbajtese-shumefishta.webp",
+      alt: "Shtyllë me mbajtëse për disa shenja njëkohësisht",
+      width: 466,
+      height: 800,
+      fit: "contain",
+    },
   },
 
   // Portale Sinjalistike
@@ -311,12 +374,26 @@ export const productVariants: ProductVariant[] = [
     name: "Portal me Krah të Vetëm",
     productSlug: "signage-portals",
     description: "Strukturë me krah anësor për vendosjen e sinjalistikës mbi një pjesë të rrugës.",
+    image: {
+      src: "/categories/portal-krah-vetem.webp",
+      alt: "Portal sinjalistik me krah të vetëm dhe tabelë drejtimi",
+      width: 796,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "krah-i-dyfishte",
     name: "Portal me Krah të Dyfishtë",
     productSlug: "signage-portals",
     description: "Strukturë që kalon mbi të gjithë gjerësinë e rrugës për shikueshmëri maksimale.",
+    image: {
+      src: "/categories/portal-krah-dyfishte.webp",
+      alt: "Portal sinjalistik me krah të dyfishtë mbi të dy korsitë",
+      width: 800,
+      height: 544,
+      fit: "contain",
+    },
   },
 
   // Sinjalistikë me Ndriçim LED
@@ -325,12 +402,26 @@ export const productVariants: ProductVariant[] = [
     name: "Shenja me LED të Integruar",
     productSlug: "led-signage",
     description: "Sinjalistikë me ndriçim të integruar për shikueshmëri gjatë natës.",
+    image: {
+      src: "/categories/led-integruar.webp",
+      alt: "Shenjë këmbësorësh me ndriçim LED të integruar dhe panel diellor",
+      width: 372,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "panel-mesazh",
     name: "Panel me Mesazh të Ndryshueshëm",
     productSlug: "led-signage",
     description: "Panele elektronike që shfaqin mesazhe ose paralajmërime të ndryshueshme.",
+    image: {
+      src: "/categories/panel-mesazh.webp",
+      alt: "Panel LED me energji diellore që shfaq mesazhin \"Punime në rrugë\"",
+      width: 712,
+      height: 800,
+      fit: "contain",
+    },
   },
 
   // Kone Trafiku
@@ -339,12 +430,26 @@ export const productVariants: ProductVariant[] = [
     name: "Kone Standarde",
     productSlug: "traffic-cones",
     description: "Kone të lehta për përcaktim të përkohshëm të zonave dhe devijimeve.",
+    image: {
+      src: "/categories/kone-standarde.webp",
+      alt: "Kon trafiku standard portokalli me shirita reflektues",
+      width: 499,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "kone-baze-e-rende",
     name: "Kone me Bazë të Rëndë",
     productSlug: "traffic-cones",
     description: "Kone me bazë të qëndrueshme për kushte me erë ose trafik intensiv.",
+    image: {
+      src: "/categories/kone-baze-e-rende.webp",
+      alt: "Kon trafiku me bazë të rëndë për qëndrueshmëri",
+      width: 507,
+      height: 800,
+      fit: "contain",
+    },
   },
 
   // Delineatorë & Reflektorë
@@ -369,12 +474,26 @@ export const productVariants: ProductVariant[] = [
     name: "Barriera Plastike",
     productSlug: "barriers",
     description: "Barriera të lehta për ndarjen e përkohshme të zonave të punës.",
+    image: {
+      src: "/categories/barriera-plastike.webp",
+      alt: "Barrierë plastike e kuqe me shirita reflektues",
+      width: 800,
+      height: 573,
+      fit: "contain",
+    },
   },
   {
     slug: "gardhe-ndarese",
     name: "Gardhe Ndarëse",
     productSlug: "barriers",
     description: "Gardhe për izolimin e kantiereve dhe zonave në ndërtim.",
+    image: {
+      src: "/categories/gardhe-ndarese.webp",
+      alt: "Gardh ndarës metalik me bazament",
+      width: 800,
+      height: 595,
+      fit: "contain",
+    },
   },
 
   // Pasqyra Trafiku
@@ -383,12 +502,26 @@ export const productVariants: ProductVariant[] = [
     name: "Pasqyra Konvekse",
     productSlug: "traffic-mirrors",
     description: "Pasqyra me kënd të gjerë pamjeje për zona me shikueshmëri të kufizuar.",
+    image: {
+      src: "/categories/pasqyra-konvekse.webp",
+      alt: "Pasqyrë konvekse portokalli me kënd të gjerë pamjeje",
+      width: 516,
+      height: 800,
+      fit: "contain",
+    },
   },
   {
     slug: "pasqyra-kryqezime",
     name: "Pasqyra për Kryqëzime",
     productSlug: "traffic-mirrors",
     description: "Pasqyra të pozicionuara për të përmirësuar shikueshmërinë në kryqëzime.",
+    image: {
+      src: "/categories/pasqyra-kryqezime.webp",
+      alt: "Pasqyrë konvekse për kryqëzim që tregon rrugën përballë",
+      width: 475,
+      height: 800,
+      fit: "contain",
+    },
   },
 
   // Zgjidhje për Parkim
@@ -415,6 +548,13 @@ export const productVariants: ProductVariant[] = [
     name: "Barriera Parkimi",
     productSlug: "parking-solutions",
     description: "Barriera për kontrollin e hyrjes dhe daljes në hapësira parkimi.",
+    image: {
+      src: "/categories/barriera-parkimi.webp",
+      alt: "Barrierë automatike parkimi me krah dhe dritë sinjalizuese",
+      width: 800,
+      height: 671,
+      fit: "contain",
+    },
   },
 
 ];

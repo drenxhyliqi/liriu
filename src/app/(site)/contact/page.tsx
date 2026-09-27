@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { ContactForm } from "@/components/sections/contact-form";
 import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 import { company } from "@/lib/constants";
@@ -7,12 +9,6 @@ export const metadata: Metadata = {
   title: "Kontakt | NSH LIRIU",
   description:
     "Na kontaktoni për një konsultim rreth projektit tuaj të radhës në sinjalistikë rrugore, inxhinieri trafiku ose infrastrukturë - Suharekë, Kosovë.",
-};
-
-const gridBackground = {
-  backgroundImage:
-    "linear-gradient(to right, rgba(10,10,10,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,10,10,0.06) 1px, transparent 1px)",
-  backgroundSize: "28px 28px",
 };
 
 export default function ContactPage() {
@@ -49,21 +45,38 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden border border-line p-8" style={gridBackground}>
-              <span aria-hidden className="absolute left-4 top-4 font-mono text-xs text-ink/25">+</span>
-              <span aria-hidden className="absolute right-4 top-4 font-mono text-xs text-ink/25">+</span>
-              <span aria-hidden className="absolute bottom-4 left-4 font-mono text-xs text-ink/25">+</span>
-              <span aria-hidden className="absolute bottom-4 right-4 font-mono text-xs text-ink/25">+</span>
+            <div className="relative aspect-[4/5] overflow-hidden border border-line">
+              <iframe
+                title={`Lokacioni i ${company.name} në hartë`}
+                src={company.mapsEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+              />
 
-              <div className="relative flex h-full flex-col justify-between">
+              <div className="pointer-events-none absolute left-0 top-0 bg-paper px-4 py-2.5">
                 <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">Lokacioni</p>
+              </div>
 
-                <div className="flex flex-col items-start">
-                  <span aria-hidden className="mb-4 h-3 w-3 shrink-0 bg-red" />
-                  <p className="font-display text-2xl font-semibold leading-tight tracking-tight text-ink md:text-3xl">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 border-t border-line bg-paper px-5 py-4">
+                <div className="flex items-center gap-2.5">
+                  <span aria-hidden className="h-2.5 w-2.5 shrink-0 bg-red" />
+                  <p className="font-display text-base font-semibold tracking-tight text-ink sm:text-lg">
                     {company.location}
                   </p>
                 </div>
+                <Link
+                  href={company.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group pointer-events-auto inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-red"
+                >
+                  Hap
+                  <ArrowUpRight
+                    aria-hidden
+                    className="h-4 w-4 -translate-y-px transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-1"
+                  />
+                </Link>
               </div>
             </div>
           </div>

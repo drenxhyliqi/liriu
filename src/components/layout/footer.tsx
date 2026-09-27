@@ -55,7 +55,14 @@ export function Footer() {
           <div className="lg:col-span-3">
             <p className={columnLabel}>Kontakt</p>
             <div className="mt-5 flex flex-col gap-3">
-              <p className="text-[15px] text-paper/75">{company.location}</p>
+              <Link
+                href={company.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] text-paper/75 transition-colors hover:text-red"
+              >
+                {company.location}
+              </Link>
               <Link href="/contact" className="group inline-flex items-center gap-1.5 text-[15px] text-paper transition-colors hover:text-red">
                 Na kontaktoni
                 <ArrowUpRight

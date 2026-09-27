@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/data/services";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -94,17 +95,28 @@ export function ContactForm() {
           <label htmlFor="projectType" className={labelClass}>
             Lloji i Projektit
           </label>
-          <select id="projectType" name="projectType" defaultValue="" className={inputClass}>
-            <option value="" disabled>
-              Zgjidhni një shërbim
-            </option>
-            {services.map((service) => (
-              <option key={service.slug} value={service.name}>
-                {service.name}
+          <div className="relative">
+            <select
+              id="projectType"
+              name="projectType"
+              defaultValue=""
+              className={`${inputClass} appearance-none pr-11`}
+            >
+              <option value="" disabled>
+                Zgjidhni një shërbim
               </option>
-            ))}
-            <option value="Tjetër">Tjetër</option>
-          </select>
+              {services.map((service) => (
+                <option key={service.slug} value={service.name}>
+                  {service.name}
+                </option>
+              ))}
+              <option value="Tjetër">Tjetër</option>
+            </select>
+            <ChevronDown
+              aria-hidden
+              className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
+            />
+          </div>
         </div>
       </div>
 
