@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { CartToast } from "@/components/layout/cart-toast";
 import { CookieConsent } from "@/components/layout/cookie-consent";
+import { SiteAnalytics } from "@/components/layout/site-analytics";
 import { ConsentProvider } from "@/lib/consent-context";
 import { CartProvider } from "@/lib/cart-context";
 
@@ -15,6 +16,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
         <div className="flex flex-1 flex-col pt-16 md:pt-20">{children}</div>
         <Footer />
         <CookieConsent />
+        <SiteAnalytics />
         <CartToast />
       </CartProvider>
     </ConsentProvider>

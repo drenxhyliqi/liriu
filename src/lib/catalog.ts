@@ -24,6 +24,14 @@ export class Catalog {
     for (const p of data.products) this.productsBySlug.set(p.slug, p);
   }
 
+  allCategories() {
+    return this.data.categories;
+  }
+
+  allProducts() {
+    return this.data.products;
+  }
+
   category(slug: string) {
     return this.bySlug.get(slug);
   }

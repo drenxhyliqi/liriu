@@ -76,7 +76,7 @@ function Preferences() {
             <div>
               <p className="font-medium">Analitika</p>
               <p className="mt-1 text-sm leading-relaxed text-muted">
-                Do të na ndihmonin të kuptojmë se si përdoret faqja. Aktualisht nuk përdorim asnjë shërbim analitik.
+                Na ndihmon të kuptojmë se si përdoret faqja. Statistika të përmbledhura, pa cookies dhe pa ju identifikuar.
               </p>
             </div>
             <Toggle checked={analytics} onChange={setAnalytics} label="Analitika" />

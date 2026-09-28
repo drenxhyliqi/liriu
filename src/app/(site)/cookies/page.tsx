@@ -16,7 +16,7 @@ export default function CookiesPage() {
           heading: "Çfarë përdorim",
           body: [
             "Të domosdoshme: ruajmë shportën e kërkesës për ofertë dhe zgjedhjen tuaj për cookies në ruajtjen lokale të shfletuesit. Pa to faqja nuk funksionon siç duhet dhe nuk kërkojnë pëlqim.",
-            "Analitika: aktualisht nuk përdorim asnjë shërbim analitik ose reklamues. Nëse e bëjmë në të ardhmen, do të aktivizohet vetëm pasi ta pranoni.",
+            "Analitika: nëse e pranoni, përdorim Vercel Web Analytics për të numëruar vizitat e faqeve në mënyrë të përmbledhur. Nuk vendos cookies, nuk ju identifikon personalisht dhe nuk aktivizohet pa pëlqimin tuaj. Nuk përdorim asnjë shërbim reklamues.",
           ],
         },
         {

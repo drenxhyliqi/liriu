@@ -2,8 +2,8 @@
 
 import { createContext, startTransition, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-// The site currently sets no analytics or marketing cookies. `analytics` is
-// the switch any future tracking script must check before loading.
+// `analytics` gates Vercel Web Analytics (site-analytics.tsx) and must gate
+// any other tracking script added later. The site sets no marketing cookies.
 export type Consent = { analytics: boolean };
 
 type ConsentContextValue = {
