@@ -76,6 +76,7 @@ export const Turnstile = React.forwardRef<TurnstileHandle, Props>(function Turns
         if (cancelled || !container.current || !window.turnstile || widgetId.current) return;
         widgetId.current = window.turnstile.render(container.current, {
           sitekey: SITE_KEY,
+          theme: "light",
           callback: (token: string) => verify.current(token),
           "expired-callback": () => expire.current?.(),
           "error-callback": () => expire.current?.(),
