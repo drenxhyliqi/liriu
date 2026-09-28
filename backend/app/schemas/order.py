@@ -23,6 +23,7 @@ class OrderCreate(CamelModel):
     phone: str | None = Field(default=None, max_length=50)
     note: str | None = Field(default=None, max_length=5000)
     items: list[OrderItemCreate] = Field(min_length=1, max_length=300)
+    captcha_token: str | None = Field(default=None, max_length=4000)
 
 
 class OrderItemRead(CamelModel):

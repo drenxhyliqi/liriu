@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from app.api.deps import get_current_admin, get_db
 from app.core.limiter import limiter
 from app.models.contact_message import ContactMessage
+from app.services.captcha import verify_captcha
 from app.schemas.common import Page
 from app.schemas.contact_message import ContactMessageCreate, ContactMessageRead, ContactMessageUpdate
 
@@ -19,6 +20,8 @@ def create_contact_message(
     """Public - what the /contact form submits. Stored for the dashboard; no
     email is sent yet (needs a confirmed destination address and a provider).
     """
+    verify_captcha(payload.captcha_token)
+
     message = ContactMessage(
         name=payload.name.strip(),
         email=payload.email.lower(),

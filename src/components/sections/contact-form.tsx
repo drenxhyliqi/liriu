@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/data/services";
+import { Turnstile, TURNSTILE_ENABLED, type TurnstileHandle } from "@/components/ui/turnstile";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -13,9 +14,18 @@ const labelClass = "mb-2 block text-xs font-medium uppercase tracking-[0.1em] te
 export function ContactForm() {
   const [status, setStatus] = React.useState<Status>("idle");
   const [error, setError] = React.useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = React.useState<string | null>(null);
+  const captcha = React.useRef<TurnstileHandle | null>(null);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (TURNSTILE_ENABLED && !captchaToken) {
+      setStatus("error");
+      setError("Ju lutemi plotësoni verifikimin anti-spam.");
+      return;
+    }
+
     setStatus("submitting");
     setError(null);
 
@@ -27,6 +37,7 @@ export function ContactForm() {
       phone: String(data.get("phone") ?? ""),
       projectType: String(data.get("projectType") ?? ""),
       message: String(data.get("message") ?? ""),
+      captchaToken,
     };
 
     try {
@@ -46,6 +57,10 @@ export function ContactForm() {
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Diçka shkoi keq. Provoni përsëri.");
+    } finally {
+      // Turnstile tokens are single-use - clear it so the next submit gets a fresh one.
+      setCaptchaToken(null);
+      captcha.current?.reset();
     }
   }
 
@@ -133,6 +148,8 @@ export function ContactForm() {
           placeholder="Na tregoni pak për projektin tuaj..."
         />
       </div>
+
+      <Turnstile ref={captcha} onVerify={setCaptchaToken} onExpire={() => setCaptchaToken(null)} />
 
       {error && <p className="text-sm text-red">{error}</p>}
 

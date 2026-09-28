@@ -51,6 +51,11 @@ class Settings(BaseSettings):
     # Public address of the Next.js site, for "open in dashboard" links and images.
     SITE_URL: str = "http://localhost:3000"
 
+    # Cloudflare Turnstile secret key. When empty, CAPTCHA verification on the
+    # public order/contact forms is skipped (so dev works without keys). Set it
+    # together with the frontend's NEXT_PUBLIC_TURNSTILE_SITE_KEY to enforce it.
+    TURNSTILE_SECRET_KEY: str = ""
+
     @property
     def order_notify_list(self) -> list[str]:
         return [e.strip() for e in self.ORDER_NOTIFY_EMAILS.split(",") if e.strip()]

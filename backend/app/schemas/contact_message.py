@@ -11,6 +11,7 @@ class ContactMessageCreate(CamelModel):
     phone: str | None = Field(default=None, max_length=50)
     project_type: str | None = Field(default=None, max_length=200)
     message: str = Field(min_length=1, max_length=10000)
+    captcha_token: str | None = Field(default=None, max_length=4000)
 
 
 class ContactMessageRead(CamelModel):

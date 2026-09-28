@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session, selectinload
 from app.api.deps import get_current_admin, get_db
 from app.core.limiter import limiter
 from app.models.order import Order, OrderStatus
+from app.services.captcha import verify_captcha
 from app.models.order_item import OrderItem
 from app.models.product import Product
 from app.schemas.common import Page
@@ -25,6 +26,8 @@ def create_order(
     arbitrary image URLs into the admin view. The admin is emailed after the
     response is sent, so a mail problem never loses or delays an order.
     """
+    verify_captcha(payload.captcha_token)
+
     slugs = {item.product_slug for item in payload.items if item.product_slug}
     products = {p.slug: p for p in db.query(Product).filter(Product.slug.in_(slugs)).all()} if slugs else {}
 
