@@ -3,7 +3,8 @@
 import * as React from "react";
 import type { CartItem } from "@/types";
 
-const STORAGE_KEY = "liriu-order-cart";
+// v2: cart lines are keyed by product slug since the catalog moved to the API.
+const STORAGE_KEY = "liriu-order-cart-v2";
 
 interface CartContextValue {
   items: CartItem[];
@@ -65,8 +66,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
       return [...current, { ...item, quantity: 1 }];
     });
-    noticeId.current += 1;
-    setNotice({ id: noticeId.current });
+    // Adding again while the toast is still showing reuses its id instead of
+    // remounting it - two fast adds would otherwise force the toast to
+    // unmount and remount mid-animation, briefly showing two overlapping
+    // toasts side by side (the container is a plain flex row, not stacked).
+    setNotice((current) => {
+      if (current) return { id: current.id };
+      noticeId.current += 1;
+      return { id: noticeId.current };
+    });
   }, []);
 
   const dismissNotice = React.useCallback(() => setNotice(null), []);

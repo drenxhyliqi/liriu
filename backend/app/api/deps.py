@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.core.security import decode_access_token
 from app.db.session import get_db as _get_db
-from app.models.admin_user import AdminUser
+from app.models.admin_user import AdminRole, AdminUser
 
 get_db = _get_db
 
@@ -15,10 +15,8 @@ def get_current_admin(
     credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
     db: Session = Depends(get_db),
 ) -> AdminUser:
-    """Guards every admin-only route (categories/products/variants writes,
-    orders, contact messages, uploads). Read-only catalog endpoints
-    (GET categories/products/variants) are intentionally left public - the
-    public site needs to read them without an admin session.
+    """Guards every admin-only route. The public catalog, order and contact
+    endpoints don't use it.
     """
     unauthorized = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -28,12 +26,18 @@ def get_current_admin(
     if credentials is None:
         raise unauthorized
 
-    email = decode_access_token(credentials.credentials)
-    if email is None:
+    subject = decode_access_token(credentials.credentials)
+    if subject is None or not subject.isdigit():
         raise unauthorized
 
-    admin = db.query(AdminUser).filter(AdminUser.email == email, AdminUser.is_active.is_(True)).first()
-    if admin is None:
+    admin = db.get(AdminUser, int(subject))
+    if admin is None or not admin.is_active:
         raise unauthorized
 
+    return admin
+
+
+def get_current_owner(admin: AdminUser = Depends(get_current_admin)) -> AdminUser:
+    if admin.role != AdminRole.OWNER:
+        raise HTTPException(status.HTTP_403_FORBIDDEN, "Vetëm pronari mund ta bëjë këtë veprim.")
     return admin

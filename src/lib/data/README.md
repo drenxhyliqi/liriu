@@ -14,3 +14,7 @@ versioned alongside the code, not editable by non-technical staff mid-flight.
 
 Do not add placeholder/invented entries to these files — leave arrays empty
 with a `// CLIENT INFORMATION REQUIRED` note until verified data exists.
+
+The product catalog is **not** here any more - it lives in the backend
+database, is managed from `/admin`, and its starter content is
+`backend/seed/catalog.json`.

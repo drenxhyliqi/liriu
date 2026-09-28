@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { AlertCircle, Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
-
-type Status = "idle" | "submitting" | "error";
+import { login } from "@/app/admin/actions";
 
 // Sharp corners and 1px rules match the rest of the site. The focus state
 // darkens the border and lays a soft ink halo behind it, so it reads on
@@ -15,46 +14,27 @@ const labelClass =
 const iconClass =
   "pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted transition-colors group-focus-within:text-ink";
 
-export function LoginForm() {
-  const [status, setStatus] = React.useState<Status>("idle");
-  const [error, setError] = React.useState<string | null>(null);
+export function LoginForm({ next }: { next?: string }) {
+  const [state, formAction, submitting] = React.useActionState(login, null);
   const [showPassword, setShowPassword] = React.useState(false);
-
-  const submitting = status === "submitting";
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("submitting");
-    setError(null);
-
-    const data = new FormData(event.currentTarget);
-
-    try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: String(data.get("email") ?? ""),
-          password: String(data.get("password") ?? ""),
-        }),
-      });
-
-      const body = await res.json().catch(() => null);
-      if (!res.ok) throw new Error(body?.error || "Diçka shkoi keq. Provoni përsëri.");
-
-      setStatus("idle");
-    } catch (err) {
-      setStatus("error");
-      setError(err instanceof Error ? err.message : "Diçka shkoi keq. Provoni përsëri.");
-    }
-  }
+  const error = state?.error;
 
   return (
     // `noValidate` suppresses the browser's own validation bubble - it is
-    // unstyleable and localised by the browser, not the site. The API
-    // already rejects empty fields with an Albanian message, which renders
-    // in the styled error block below.
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+    // unstyleable and localised by the browser, not the site. The action
+    // rejects empty fields with an Albanian message, which renders in the
+    // styled error block below.
+    <form
+      noValidate
+      className="flex flex-col gap-5"
+      onSubmit={(event) => {
+        // Not `<form action>`: React would reset the fields after a failed attempt.
+        event.preventDefault();
+        const fd = new FormData(event.currentTarget);
+        React.startTransition(() => formAction(fd));
+      }}
+    >
+      {next && <input type="hidden" name="next" value={next} />}
       <div>
         <label htmlFor="email" className={labelClass}>
           Email

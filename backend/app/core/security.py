@@ -30,7 +30,7 @@ def create_access_token(subject: str) -> str:
 
 
 def decode_access_token(token: str) -> str | None:
-    """Returns the subject (admin email) if the token is valid, else None."""
+    """Returns the subject (the admin's id) if the token is valid, else None."""
     try:
         payload = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
     except jwt.JWTError:

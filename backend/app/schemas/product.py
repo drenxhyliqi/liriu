@@ -1,40 +1,51 @@
 from datetime import datetime
+from typing import Literal
+
+from pydantic import Field
 
 from app.schemas.base import CamelModel
-from app.schemas.product_variant import ProductVariantRead
+
+ImageFit = Literal["cover", "contain"]
 
 
-class ProductBase(CamelModel):
-    slug: str
-    name: str
+class ProductCreate(CamelModel):
+    name: str = Field(min_length=1, max_length=300)
+    # Generated from the name when omitted.
+    slug: str | None = Field(default=None, max_length=120)
     description: str = ""
-    sort_order: int = 0
-
-
-class ProductCreate(ProductBase):
-    category_id: int
+    keywords: str = Field(default="", max_length=500)
+    image_url: str | None = Field(default=None, max_length=500)
+    image_fit: ImageFit = "contain"
+    is_active: bool = True
+    category_ids: list[int] = []
 
 
 class ProductUpdate(CamelModel):
-    slug: str | None = None
-    name: str | None = None
+    name: str | None = Field(default=None, min_length=1, max_length=300)
+    slug: str | None = Field(default=None, min_length=1, max_length=120)
     description: str | None = None
-    sort_order: int | None = None
-    category_id: int | None = None
-    # Set after a direct-to-Cloudinary upload completes (see
-    # services/cloudinary.py) - the admin UI PATCHes these two together.
-    image_url: str | None = None
-    image_public_id: str | None = None
+    keywords: str | None = Field(default=None, max_length=500)
+    image_url: str | None = Field(default=None, max_length=500)
+    image_fit: ImageFit | None = None
+    is_active: bool | None = None
+    category_ids: list[int] | None = None
 
 
-class ProductRead(ProductBase):
+class CategoryRef(CamelModel):
     id: int
-    category_id: int
-    image_url: str | None = None
-    image_public_id: str | None = None
+    slug: str
+    name: str
+
+
+class ProductRead(CamelModel):
+    id: int
+    slug: str
+    name: str
+    description: str
+    keywords: str
+    image_url: str | None
+    image_fit: str
+    is_active: bool
+    categories: list[CategoryRef] = []
     created_at: datetime
     updated_at: datetime
-
-
-class ProductWithVariants(ProductRead):
-    variants: list[ProductVariantRead] = []

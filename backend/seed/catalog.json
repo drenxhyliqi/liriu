@@ -1,0 +1,3498 @@
+{
+  "categories": [
+    {
+      "slug": "vertical-signage",
+      "name": "Sinjalistikë Vertikale",
+      "parent": null,
+      "description": null,
+      "imageUrl": null,
+      "imageFit": "cover",
+      "sortOrder": 0
+    },
+    {
+      "slug": "illuminated",
+      "name": "Sinjalistikë e Ndriçuar",
+      "parent": null,
+      "description": null,
+      "imageUrl": null,
+      "imageFit": "cover",
+      "sortOrder": 1
+    },
+    {
+      "slug": "road-safety",
+      "name": "Siguri & Përcaktim Rrugësh",
+      "parent": null,
+      "description": null,
+      "imageUrl": null,
+      "imageFit": "cover",
+      "sortOrder": 2
+    },
+    {
+      "slug": "street-furniture",
+      "name": "Mobilje Rrugore",
+      "parent": null,
+      "description": null,
+      "imageUrl": null,
+      "imageFit": "cover",
+      "sortOrder": 3
+    },
+    {
+      "slug": "traffic-signs",
+      "name": "Shenja Trafiku",
+      "parent": "vertical-signage",
+      "description": "Shenja rregullative, paralajmëruese dhe udhëzuese sipas standardeve rrugore.",
+      "imageUrl": "/categories/sinjalistike-vertikale.webp",
+      "imageFit": "cover",
+      "sortOrder": 1
+    },
+    {
+      "slug": "information-signs",
+      "name": "Shenja Informacioni & Orientimi",
+      "parent": "vertical-signage",
+      "description": "Tabela orientuese dhe informative për drejtim dhe destinacion.",
+      "imageUrl": "/categories/shenja-informacioni-orientimi.webp",
+      "imageFit": "cover",
+      "sortOrder": 2
+    },
+    {
+      "slug": "street-name-plates",
+      "name": "Tabela me Emra Rrugësh",
+      "parent": "vertical-signage",
+      "description": "Sinjalistikë identifikuese për rrugë, lagje dhe zona urbane.",
+      "imageUrl": "/categories/tabela-me-emra-rrugesh-qytet.webp",
+      "imageFit": "cover",
+      "sortOrder": 3
+    },
+    {
+      "slug": "poles-brackets",
+      "name": "Shtylla & Mbajtëse",
+      "parent": "vertical-signage",
+      "description": "Struktura montimi për vendosjen e qëndrueshme të sinjalistikës.",
+      "imageUrl": "/categories/shtylla-mbajtese.webp",
+      "imageFit": "cover",
+      "sortOrder": 4
+    },
+    {
+      "slug": "signage-portals",
+      "name": "Portale Sinjalistike",
+      "parent": "illuminated",
+      "description": "Struktura mbi rrugë për sinjalistikë me shikueshmëri të lartë.",
+      "imageUrl": "/categories/portale-sinjalistike.webp",
+      "imageFit": "cover",
+      "sortOrder": 1
+    },
+    {
+      "slug": "led-signage",
+      "name": "Sinjalistikë me Ndriçim LED",
+      "parent": "illuminated",
+      "description": "Sinjalistikë e ndriçuar për shikueshmëri gjatë natës dhe kushteve të vështira.",
+      "imageUrl": "/categories/sinjalistike-led.webp",
+      "imageFit": "cover",
+      "sortOrder": 2
+    },
+    {
+      "slug": "traffic-cones",
+      "name": "Kone Trafiku",
+      "parent": "road-safety",
+      "description": "Përcaktim i përkohshëm i zonave të punës dhe devijimeve.",
+      "imageUrl": "/categories/kone-trafiku.webp",
+      "imageFit": "cover",
+      "sortOrder": 1
+    },
+    {
+      "slug": "delineators",
+      "name": "Delineatorë & Reflektorë",
+      "parent": "road-safety",
+      "description": "Shenjues anësorë për orientim dhe siguri gjatë natës.",
+      "imageUrl": "/categories/delineatore-mbrojtese.webp",
+      "imageFit": "cover",
+      "sortOrder": 2
+    },
+    {
+      "slug": "barriers",
+      "name": "Pengesa & Barriera",
+      "parent": "road-safety",
+      "description": "Ndarje dhe mbrojtje fizike për zona pune dhe kantiere.",
+      "imageUrl": "/categories/pengesa-barriera.webp",
+      "imageFit": "cover",
+      "sortOrder": 3
+    },
+    {
+      "slug": "traffic-mirrors",
+      "name": "Pasqyra Trafiku",
+      "parent": "street-furniture",
+      "description": "Pasqyra për shikueshmëri në kryqëzime dhe kthesa të kufizuara.",
+      "imageUrl": "/categories/kone-pasqyra-trafiku.webp",
+      "imageFit": "cover",
+      "sortOrder": 1
+    },
+    {
+      "slug": "parking-solutions",
+      "name": "Zgjidhje për Parkim",
+      "parent": "street-furniture",
+      "description": "Sinjalistikë dhe pajisje për organizimin e hapësirave të parkimit.",
+      "imageUrl": "/categories/zgjidhje-parkimi.webp",
+      "imageFit": "cover",
+      "sortOrder": 2
+    },
+    {
+      "slug": "urdhera-te-prera",
+      "name": "Shenjat e Urdhërave të Prera",
+      "parent": "traffic-signs",
+      "description": "Shenjat e komunikacionit për urdhra të prera u japin në dijeni pjesëmarrësve në komunikacion në rrugë për ndalesat, për kufizimet dhe obligimet të cilave ata doemos duhet t'u përmbahen. Shenjat e urdhrave të prera vendosen drejtpërdrejt para vendit nga i cili pjesëmarrësit në trafik obligohen t'u përmbahen urdhëresave të shprehura me shenjat e komunikacionit. Këto shenja kanë vlerë deri te udhëkryqi pas shenjës, përkatësisht deri te shenja e ardhshme që e ndërron (shfuqizon) urdhëresën e prerë. Shenjat e urdhrave të prera kanë formë rrethi.\n\nShenjat e urdhrave të prera ndahen në:\n• Shenja për ndalim, gjegjësisht kufizim - ngjyrën bazë e kanë të bardhë me teh të kuq.\n• Shenja për obligim - ngjyrë bazë e kanë të kaltër të mbyllur, ndërsa simbolet janë me ngjyrë të bardhë.",
+      "imageUrl": "/categories/shenja-ndalese.webp",
+      "imageFit": "contain",
+      "sortOrder": 1
+    },
+    {
+      "slug": "paralajmeruese",
+      "name": "Shenja Paralajmëruese",
+      "parent": "traffic-signs",
+      "description": "Shenjat e komunikacionit për rrezik shërbejnë që pjesëmarrësit në komunikacion të paralajmërohen për rrezikun që u kanoset në vend të caktuar, gjegjësisht në një pjesë të rrugës, dhe të lajmërohen për natyrën e atij rreziku. Shenjat për rrezik kanë formë të trekëndëshit barabrinjës. Ngjyrën bazë e kanë të bardhë, simbolet janë të paraqitura me ngjyrë të zezë, ndërsa tehet i kanë me ngjyrë të kuqe. Jashtë vendbanimit, shenjat e rrezikut sipas rregullave vihen prej 150 deri në 250 m para vendit të rrezikshëm në rrugë.",
+      "imageUrl": "/categories/shenja-paralajmeruese.webp",
+      "imageFit": "contain",
+      "sortOrder": 2
+    },
+    {
+      "slug": "detyrimit",
+      "name": "Shenjat e Detyrimit",
+      "parent": "traffic-signs",
+      "description": "Shenja që përcaktojnë një sjellje të detyrueshme, si drejtimi i lëvizjes apo shpejtësia minimale.",
+      "imageUrl": "/categories/shenja-urdheruese.webp",
+      "imageFit": "contain",
+      "sortOrder": 3
+    },
+    {
+      "slug": "lajmerimit",
+      "name": "Shenjat e Lajmërimit",
+      "parent": "traffic-signs",
+      "description": "Shenjat e lajmërimit u japin pjesëmarrësve në komunikacion lajmërimet e nevojshme për rrugën nëpër të cilën qarkullojnë, vendbanimet nëpër të cilat kalon rruga, largësinë deri te ato vende, objekte apo shërbime që gjenden përgjatë rrugës, për shfuqizimin e shenjave të urdhrave të prera, si dhe lajmërime të tjera që mund të jenë të nevojshme. Këto shenja kanë formë rrethi, katrori apo këndrejti. Ngjyra themelore e shenjave për lajmërim është e bardhë apo e verdhë ndriçuese, me simbole dhe mbishkrime me ngjyrë të zezë, gjegjësisht e kaltër e errët me simbole dhe mbishkrime me ngjyrë të bardhë dhe të zezë.",
+      "imageUrl": "/categories/shenja-perparesie.webp",
+      "imageFit": "contain",
+      "sortOrder": 4
+    },
+    {
+      "slug": "drejtimi",
+      "name": "Shenja Drejtimi",
+      "parent": "information-signs",
+      "description": "Tabela që udhëzojnë drejtuesit drejt destinacioneve dhe rrugëve kryesore.",
+      "imageUrl": "/categories/shenja-drejtimi.webp",
+      "imageFit": "contain",
+      "sortOrder": 1
+    },
+    {
+      "slug": "destinacioni",
+      "name": "Shenja Destinacioni",
+      "parent": "information-signs",
+      "description": "Tabela që tregojnë distancën dhe drejtimin për qytete, zona apo objekte kryesore.",
+      "imageUrl": "/signs/lajmerimit/paraudhetregues.webp",
+      "imageFit": "contain",
+      "sortOrder": 2
+    },
+    {
+      "slug": "sherbimesh",
+      "name": "Shenja Shërbimesh",
+      "parent": "information-signs",
+      "description": "Tabela informuese për shërbime përgjatë rrugës, si parkime apo pika interesi.",
+      "imageUrl": "/signs/lajmerimit/spital.webp",
+      "imageFit": "contain",
+      "sortOrder": 3
+    },
+    {
+      "slug": "standarde",
+      "name": "Tabela Standarde",
+      "parent": "street-name-plates",
+      "description": "Tabela identifikuese për emrin e rrugës, në format standard.",
+      "imageUrl": "/signs/lajmerimit/numri-i-autostrades.webp",
+      "imageFit": "contain",
+      "sortOrder": 1
+    },
+    {
+      "slug": "sinjalistike-parkimi",
+      "name": "Sinjalistikë Parkimi",
+      "parent": "parking-solutions",
+      "description": "Shenja që organizojnë dhe rregullojnë hapësirat e parkimit.",
+      "imageUrl": "/signs/lajmerimit/vendparkim.webp",
+      "imageFit": "contain",
+      "sortOrder": 1
+    }
+  ],
+  "products": [
+    {
+      "slug": "dy-kahjet",
+      "name": "Ndalim komunikacioni në të dyja kahjet",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/dy-kahjet.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "nje-kahe",
+      "name": "Ndalim komunikacioni në një kahe",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/nje-kahe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "kufizim-shpejtesie",
+      "name": "Kufizim i shpejtësisë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kufizim-shpejtesie.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "ndalim-i-detyruar",
+      "name": "Ndalim i detyruar",
+      "description": "",
+      "keywords": "stop",
+      "imageUrl": "/signs/urdhera-te-prera/ndalim-i-detyruar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "kryqezim-perparesi-kalimi",
+      "name": "Kryqëzim me rrugë me përparësi kalimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kryqezim-perparesi-kalimi.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "motorike-perjashtim",
+      "name": "Ndalim komunikacioni për të gjitha automjetet me veprim motorik përveç motoçikletës pa rimorkio dhe mopedëve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/motorike-perjashtim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "motorike",
+      "name": "Ndalim komunikacioni për të gjitha automjetet me veprim motorike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/motorike.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "distanca-automjeteve",
+      "name": "Distanca më e vogël ndërmjet automjeteve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/distanca-automjeteve.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "biciklete",
+      "name": "Ndalim komunikacioni për biçikleta",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/biciklete.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "moped",
+      "name": "Ndalim komunikacioni për çiklomotor (moped)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/moped.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "slug": "motocikleta",
+      "name": "Ndalim komunikacioni për motoçikleta",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/motocikleta.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "slug": "kembesore",
+      "name": "Ndalim komunikacioni për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "slug": "motorike-dhe-qerre",
+      "name": "Ndalim komunikacioni për të gjitha mjetet me veprim motorik dhe qerreve që tërhiqen me kafshë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/motorike-dhe-qerre.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "slug": "kalores",
+      "name": "Ndalim komunikacioni për kalorës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kalores.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "slug": "mallra",
+      "name": "Ndalim komunikacioni për mjetet motorike ngarkuese të mallrave",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/mallra.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "slug": "traktore",
+      "name": "Ndalim komunikacioni për traktorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/traktore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "slug": "autobuse",
+      "name": "Ndalim komunikacioni për autobusë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/autobuse.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "slug": "parkimi",
+      "name": "Ndalim parkimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/parkimi.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 18
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "ndaljes-parkimit",
+      "name": "Ndalim i ndaljes dhe i parkimit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/ndaljes-parkimit.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 19
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "parkim-tek",
+      "name": "Parkim alternativ (ditët tek)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/parkim-tek.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 20
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "parkim-cift",
+      "name": "Parkim alternativ (ditët çift)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/parkim-cift.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 21
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "kthim-majtas",
+      "name": "Ndalim kthimi majtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kthim-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 22
+        }
+      ]
+    },
+    {
+      "slug": "kthim-djathtas",
+      "name": "Ndalim kthimi djathtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kthim-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 23
+        }
+      ]
+    },
+    {
+      "slug": "kthim-gjysmerrethor",
+      "name": "Ndalim kthimi gjysmë rrethor",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/kthim-gjysmerrethor.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "slug": "perparesi-kahja-kundert",
+      "name": "Përparësi kalimi për automjetet nga kahja e kundërt",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/perparesi-kahja-kundert.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "slug": "parakalim",
+      "name": "Ndalim parakalimi i të gjitha automjeteve me veprim motorik",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/parakalim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 26
+        }
+      ]
+    },
+    {
+      "slug": "parakalim-mallra",
+      "name": "Ndalim parakalimi për automjetet ngarkuese të mallrave",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/parakalim-mallra.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 27
+        }
+      ]
+    },
+    {
+      "slug": "cisterna",
+      "name": "Ndalim komunikacioni për cisterna",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/cisterna.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "slug": "eksploziv",
+      "name": "Ndalim komunikacioni për mjetet që transportojnë eksploziv ose disa materie ndezëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/eksploziv.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "slug": "materie-rrezikshme",
+      "name": "Ndalim komunikacioni për mjetet që transportojnë materie të rrezikshme",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/materie-rrezikshme.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "slug": "masa",
+      "name": "Ndalim komunikacioni për mjetet masa e përgjithshme e të cilëve e kalon masën e caktuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/masa.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "slug": "ngarkesa-boshtore",
+      "name": "Ndalim komunikacioni për mjetet që e tejkalojnë ngarkesën e caktuar boshtore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/ngarkesa-boshtore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "slug": "gjeresia",
+      "name": "Ndalim komunikacioni për mjetet gjërësia e përgjithshme e të cilave e kalon gjërësinë e caktuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/gjeresia.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "slug": "lartesia",
+      "name": "Ndalim komunikacioni për mjetet lartësija e përgjithshme e të cilave e kalon lartësinë e caktuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/lartesia.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 34
+        }
+      ]
+    },
+    {
+      "slug": "gjatesia",
+      "name": "Ndalim komunikacioni për mjetet që e tejkalojnë gjatësinë e caktuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/gjatesia.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 35
+        }
+      ]
+    },
+    {
+      "slug": "bashkangjitur-perjashtim",
+      "name": "Ndalim komunikacioni për mjetet me veprim motorik që tërheqin mjet bashkangjitës, përveç gjysëm rimorkios",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/bashkangjitur-perjashtim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 36
+        }
+      ]
+    },
+    {
+      "slug": "bashkangjitur",
+      "name": "Ndalim komunikacioni për automjetet që tërheqin mjet bashkangjitës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/bashkangjitur.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 37
+        }
+      ]
+    },
+    {
+      "slug": "qerre-kafshe",
+      "name": "Ndalim komunikacioni për qerre që tërhiqen me kafshë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/qerre-kafshe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 38
+        }
+      ]
+    },
+    {
+      "slug": "karroce-dore",
+      "name": "Ndalim komunikacioni për karrocë dore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/karroce-dore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 39
+        }
+      ]
+    },
+    {
+      "slug": "fotografim",
+      "name": "Ndalohet fotografimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/fotografim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 40
+        }
+      ]
+    },
+    {
+      "slug": "akustik",
+      "name": "Ndalim i dhënies së shenjave të zëshme - akustike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/urdhera-te-prera/akustik.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "urdhera-te-prera",
+          "position": 41
+        }
+      ]
+    },
+    {
+      "slug": "dy-kahe",
+      "name": "Komunikacion në dy kahe",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/dy-kahe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "rrjedhe-rrethore",
+      "name": "Kryqëzim me rrjedhë rrethore të komunikacionit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/rrjedhe-rrethore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "kryqezim-dytesor-kend-drejte",
+      "name": "Kryqëzim me rrugë dytësore nën kënd të drejtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kryqezim-dytesor-kend-drejte.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "kryqezim-rrugesh",
+      "name": "Kryqëzim rrugësh",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kryqezim-rrugesh.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "kthese-djathtas",
+      "name": "Kthesë e rrezikshme djathtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kthese-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "kthese-majtas",
+      "name": "Kthesë e rrezikshme majtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kthese-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "kthesa-para-djathtas",
+      "name": "Kthesa të njëpasnjëshme, e para djathtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kthesa-para-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "kthesa-para-majtas",
+      "name": "Kthesa të njëpasnjëshme, e para majtas",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kthesa-para-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "ndarje-rruge",
+      "name": "Ndarje e rrugës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ndarje-rruge.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "lidhje-drejte-majtas",
+      "name": "Lidhje me rrugë dytësore nën kënd të drejtë nga ana e majtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/lidhje-drejte-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "slug": "lidhje-drejte-djathtas",
+      "name": "Lidhje me rrugë dytësore nën kënd të drejtë nga ana e djathtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/lidhje-drejte-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "slug": "lidhje-mprehte-majtas",
+      "name": "Lidhje me rrugë dytësore nën kënd të mpreht nga ana e majtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/lidhje-mprehte-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "slug": "lidhje-mprehte-djathtas",
+      "name": "Lidhje me rrugë dytësore nën kënd të mpreht nga ana e djathtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/lidhje-mprehte-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "slug": "perpjetez",
+      "name": "Përpjetëze e rrezikshme",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/perpjetez.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "slug": "teposhtez",
+      "name": "Teposhtëzë e rrezikshme",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/teposhtez.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "slug": "gunga",
+      "name": "Rrugë jo e rrafshët për shkak të gungave (qumjeve)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/gunga.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "slug": "gunga-gropa",
+      "name": "Rrugë jo e rrafshët për shkak të gungave dhe gropave në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/gunga-gropa.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "slug": "gropa",
+      "name": "Rrugë jo e rrafshët për shkak të gropave në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/gropa.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "slug": "akull",
+      "name": "Rrezik nga akulli (ngricë) në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/akull.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "slug": "rruge-resqitese",
+      "name": "Rrugë rëshqitëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/rruge-resqitese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "slug": "shembje-guresh",
+      "name": "Shembje gurësh",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/shembje-guresh.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 21
+        }
+      ]
+    },
+    {
+      "slug": "sperkatje-guresh",
+      "name": "Spërkatje gurësh",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/sperkatje-guresh.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 22
+        }
+      ]
+    },
+    {
+      "slug": "ngushtim",
+      "name": "Ngushtim i rrugës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ngushtim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 23
+        }
+      ]
+    },
+    {
+      "slug": "ngushtim-majtas",
+      "name": "Ngushtim i rrugës nga ana e majtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ngushtim-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "slug": "ngushtim-djathtas",
+      "name": "Ngushtim i rrugës nga ana e djathtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ngushtim-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "slug": "punime",
+      "name": "Punime në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/punime.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 26
+        }
+      ]
+    },
+    {
+      "slug": "kolone",
+      "name": "Komunikacion i dendur, kolonë e automjeteve të ndalura",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kolone.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 27
+        }
+      ]
+    },
+    {
+      "slug": "ere-anesore",
+      "name": "Erë anësore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ere-anesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 28
+        }
+      ]
+    },
+    {
+      "slug": "ure-e-levizshme",
+      "name": "Urë e lëvizshme",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/ure-e-levizshme.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 29
+        }
+      ]
+    },
+    {
+      "slug": "afersi-bregu",
+      "name": "Afërsi e bregut",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/afersi-bregu.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "slug": "semafor-vertikal",
+      "name": "Arritje te shenjat ndriçuese të komunikacionit të vendosura në mënyrë vertikale",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/semafor-vertikal.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "slug": "semafor-horizontal",
+      "name": "Arritje te shenjat ndriçuese të komunikacionit të vendosura në mënyrë horizontale",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/semafor-horizontal.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "slug": "vendkalim",
+      "name": "Vendkalim i shënuar për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/vendkalim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "slug": "paralajmeruese-kembesore",
+      "name": "Këmbësorë në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 34
+        }
+      ]
+    },
+    {
+      "slug": "femije",
+      "name": "Fëmijë në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/femije.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 35
+        }
+      ]
+    },
+    {
+      "slug": "autobus",
+      "name": "Afërsi e stacionit të autobusëve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/autobus.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 36
+        }
+      ]
+    },
+    {
+      "slug": "aeroplan",
+      "name": "Afërsi e pistës së aeroplanëve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/aeroplan.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 37
+        }
+      ]
+    },
+    {
+      "slug": "egersira",
+      "name": "Egërsira në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/egersira.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 38
+        }
+      ]
+    },
+    {
+      "slug": "kafshe",
+      "name": "Kafshë në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kafshe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 39
+        }
+      ]
+    },
+    {
+      "slug": "hekurudhe-me-mbrojtese",
+      "name": "Kalim i rrugës nëpër hekurudhë me mbrojtëse ose gjysmëmbrojtëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/hekurudhe-me-mbrojtese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 40
+        }
+      ]
+    },
+    {
+      "slug": "hekurudhe-pa-mbrojtese",
+      "name": "Kalim i rrugës nëpër hekurudhë pa mbrojtëse ose gjysmëmbrojtëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/hekurudhe-pa-mbrojtese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 41
+        }
+      ]
+    },
+    {
+      "slug": "tramvaj",
+      "name": "Binarë tramvaji",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/tramvaj.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 42
+        }
+      ]
+    },
+    {
+      "slug": "andreu-nje-pale",
+      "name": "Kryqi i Andreut - me një palë binarë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/andreu-nje-pale.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 43
+        }
+      ]
+    },
+    {
+      "slug": "andreu-dy-pale",
+      "name": "Kryqi i Andreut - me dy ose më shumë palë binarë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/andreu-dy-pale.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 44
+        }
+      ]
+    },
+    {
+      "slug": "afrim-pa-mbrojtese",
+      "name": "Afrim kah kalimi i rrugës përtej hekurudhës pa mbrojtëse ose gjysmëmbrojtëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/afrim-pa-mbrojtese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 45
+        }
+      ]
+    },
+    {
+      "slug": "afrim-me-mbrojtese",
+      "name": "Afrimi kah kalimi i rrugës përtej hekurudhës me mbrojtëse ose gjysmëmbrojtëse",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/afrim-me-mbrojtese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 46
+        }
+      ]
+    },
+    {
+      "slug": "permbysje",
+      "name": "Përmbysje ose rrëshqitje e automjeteve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/permbysje.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 47
+        }
+      ]
+    },
+    {
+      "slug": "bankine",
+      "name": "Bankinë e pacaktuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/bankine.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 48
+        }
+      ]
+    },
+    {
+      "slug": "tunel",
+      "name": "Tunel (Galeri)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/tunel.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 49
+        }
+      ]
+    },
+    {
+      "slug": "zjarr",
+      "name": "Rrezik nga zjarri",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/zjarr.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 50
+        }
+      ]
+    },
+    {
+      "slug": "fatalitet",
+      "name": "Aksident me fatalitet",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/fatalitet.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 51
+        }
+      ]
+    },
+    {
+      "slug": "kthese-e-rrezikshme",
+      "name": "Kthesë e rrezikshme",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/kthese-e-rrezikshme.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 52
+        }
+      ]
+    },
+    {
+      "slug": "rrezik",
+      "name": "Rrezik në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/rrezikut/rrezik.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "paralajmeruese",
+          "position": 53
+        }
+      ]
+    },
+    {
+      "slug": "kahje-majtas",
+      "name": "Kahje e detyruar (majtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/kahje-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "kahje-drejt",
+      "name": "Kahje e detyruar (drejt)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/kahje-drejt.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "kahje-kthim-djathtas",
+      "name": "Kahje e detyruar (kthim djathtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/kahje-kthim-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "kahje-kthim-majtas",
+      "name": "Kahje e detyruar (kthim majtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/kahje-kthim-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "kahje-kthim-gjysmerrethor",
+      "name": "Kahje e detyruar (kthim gjysmërrethor)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/kahje-kthim-gjysmerrethor.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "lejuara-drejt-majtas",
+      "name": "Kahje të lejuara (drejt ose majtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/lejuara-drejt-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "lejuara-majtas-djathtas",
+      "name": "Kahje të lejuara (majtas ose djathtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/lejuara-majtas-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "lejuara-drejt-djathtas",
+      "name": "Kahje të lejuara (drejt ose djathtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/lejuara-drejt-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "anashkalim-majtas",
+      "name": "Anashkalim i detyruar nga ana e majtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/anashkalim-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "anashkalim-djathtas",
+      "name": "Anashkalim i detyruar nga ana e djathtë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/anashkalim-djathtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "slug": "detyrimit-rrjedhe-rrethore",
+      "name": "Rrjedhë rrethore e komunikacionit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/rrjedhe-rrethore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "slug": "shteg-biciklista",
+      "name": "Shteg për biçiklistë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/shteg-biciklista.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "slug": "shteg-kembesore",
+      "name": "Shteg për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/shteg-kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "slug": "shteg-i-ndare",
+      "name": "Shteg i ndarë për biçiklistë dhe këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/shteg-i-ndare.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "slug": "pajisje-dimrore",
+      "name": "Pajisje dimrore (zinxhirë për dëborë)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/pajisje-dimrore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "slug": "shteg-kalores",
+      "name": "Shteg për kalorës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/shteg-kalores.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "slug": "shpejtesia-minimale",
+      "name": "Shpejtësia më e vogël e lejuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/detyrimit/shpejtesia-minimale.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "detyrimit",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "slug": "rruge-me-perparesi-kalimi",
+      "name": "Rrugë me përparësi kalimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rruge-me-perparesi-kalimi.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "mbarim-i-rruges-me-perparesi-kalimi",
+      "name": "Mbarim i rrugës me përparësi kalimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarim-i-rruges-me-perparesi-kalimi.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "rruge-me-komunikacion-ne-nje-kahje-drejt",
+      "name": "Rrugë me komunikacion në një kahje (drejt)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rruge-me-komunikacion-ne-nje-kahje-drejt.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "rruge-me-komunikacion-ne-nje-kahje-majtas",
+      "name": "Rrugë me komunikacion në një kahje (majtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rruge-me-komunikacion-ne-nje-kahje-majtas.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "perparesi-kalimi-ne-raport-me-automjetet-nga-kah",
+      "name": "Përparësi kalimi në raport me automjetet nga kahja e kundërt",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perparesi-kalimi-ne-raport-me-automjetet-nga-kah.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "shpejtesi-qe-rekomandohet",
+      "name": "Shpejtësi që rekomandohet",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shpejtesi-qe-rekomandohet.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-shpejtesise-se-rekomanduar",
+      "name": "Përfundim i shpejtësisë së rekomanduar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-shpejtesise-se-rekomanduar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-te-gjitha-ndalesave",
+      "name": "Përfundim i të gjitha ndalesave",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-te-gjitha-ndalesave.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-ndaleses-per-parakalim-te-te-gjitha",
+      "name": "Përfundim i ndalesës për parakalim të të gjitha automjeteve me veprim motorik përveç çiklomotorëve (mopedëve)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-ndaleses-per-parakalim-te-te-gjitha.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-ndaleses-per-parakalim-te-automjetev",
+      "name": "Përfundim i ndalesës për parakalim të automjeteve ngarkuese të mallrave",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-ndaleses-per-parakalim-te-automjetev.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-ndaleses-se-perdorimit-te-sinjaleve",
+      "name": "Përfundim i ndalesës së përdorimit të sinjaleve të zëshme - akustike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-ndaleses-se-perdorimit-te-sinjaleve.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-shpejtesise-se-kufizuar",
+      "name": "Përfundim i shpejtësisë së kufizuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-shpejtesise-se-kufizuar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-shpejtesise-me-te-vogel-te-lejuar",
+      "name": "Përfundim i shpejtësisë më të vogël të lejuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-shpejtesise-me-te-vogel-te-lejuar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-shtegut-per-kalores",
+      "name": "Mbarimi i shtegut për kalorës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-shtegut-per-kalores.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-shtegut-per-bicikliste",
+      "name": "Mbarimi i shtegut për biçiklistë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-shtegut-per-bicikliste.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-shtegut-per-kembesore",
+      "name": "Mbarimi i shtegut për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-shtegut-per-kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "slug": "perfundim-i-obligimit-per-perdorim-te-pajisjeve",
+      "name": "Përfundim i obligimit për përdorim të pajisjeve dimrore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/perfundim-i-obligimit-per-perdorim-te-pajisjeve.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "slug": "zone-e-komunikacionit-te-qete",
+      "name": "Zonë e komunikacionit të qetë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zone-e-komunikacionit-te-qete.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-zones-se-qete-te-komunikacionit",
+      "name": "Mbarimi i zonës së qetë të komunikacionit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-zones-se-qete-te-komunikacionit.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "slug": "autostrade",
+      "name": "Autostradë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/autostrade.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-autostrades",
+      "name": "Mbarimi i autostradës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-autostrades.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 21
+        }
+      ]
+    },
+    {
+      "slug": "rruge-e-rezervuar-per-qarkullim-te-automjeteve-m",
+      "name": "Rrugë e rezervuar për qarkullim të automjeteve motorike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rruge-e-rezervuar-per-qarkullim-te-automjeteve-m.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 22
+        }
+      ]
+    },
+    {
+      "slug": "mbarim-i-rruges-se-rezervuar-per-qarkullim-te-au",
+      "name": "Mbarim i rrugës së rezervuar për qarkullim të automjeteve motorike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarim-i-rruges-se-rezervuar-per-qarkullim-te-au.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 23
+        }
+      ]
+    },
+    {
+      "slug": "anashkalim-i-lejuar",
+      "name": "Anashkalim i lejuar",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/anashkalim-i-lejuar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 24
+        }
+      ]
+    },
+    {
+      "slug": "gunge-ne-rruge-ngadalesues-i-shpejtesise",
+      "name": "Gungë në rrugë (ngadalësues i shpejtësisë)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/gunge-ne-rruge-ngadalesues-i-shpejtesise.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 25
+        }
+      ]
+    },
+    {
+      "slug": "zgjerim-per-ndalim-te-detyrueshem-te-automjeteve",
+      "name": "Zgjerim për ndalim të detyrueshëm të automjeteve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zgjerim-per-ndalim-te-detyrueshem-te-automjeteve.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 26
+        }
+      ]
+    },
+    {
+      "slug": "zgjerim-per-ndalim-te-detyrueshem-te-automjeteve-29",
+      "name": "Zgjerim për ndalim të detyrueshëm të automjeteve “SOS” Telefon",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zgjerim-per-ndalim-te-detyrueshem-te-automjeteve-29.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 27
+        }
+      ]
+    },
+    {
+      "slug": "zone-ku-kufizohet-kohezgjatja-e-parkimit",
+      "name": "Zonë ku kufizohet kohëzgjatja e parkimit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zone-ku-kufizohet-kohezgjatja-e-parkimit.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 28
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-zones-ku-kufizohet-kohezgjatja-e-parki",
+      "name": "Mbarimi i zonës ku kufizohet kohëzgjatja e parkimit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-zones-ku-kufizohet-kohezgjatja-e-parki.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 29
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "zone-ku-eshte-e-kufizuar-shpejtesia",
+      "name": "Zonë ku është e kufizuar shpejtësia",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zone-ku-eshte-e-kufizuar-shpejtesia.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 30
+        }
+      ]
+    },
+    {
+      "slug": "mbarim-i-zones-ku-eshte-e-kufizuar-shpejtesia",
+      "name": "Mbarim i zonës ku është e kufizuar shpejtësia",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarim-i-zones-ku-eshte-e-kufizuar-shpejtesia.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 31
+        }
+      ]
+    },
+    {
+      "slug": "zone-per-kembesore",
+      "name": "Zonë për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/zone-per-kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "slug": "mbarimi-i-zones-per-kembesore",
+      "name": "Mbarimi i zonës për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarimi-i-zones-per-kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 33
+        }
+      ]
+    },
+    {
+      "slug": "vendparkim",
+      "name": "Vendparkim",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/vendparkim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 34
+        },
+        {
+          "category": "sherbimesh",
+          "position": 23
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "garazhe",
+      "name": "Garazhë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/garazhe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 35
+        },
+        {
+          "category": "sherbimesh",
+          "position": 24
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "kufizim-kohor-i-parkimit",
+      "name": "Kufizim kohor i parkimit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/kufizim-kohor-i-parkimit.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 36
+        },
+        {
+          "category": "sinjalistike-parkimi",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "vendkalim-i-shenuar-per-kembesore",
+      "name": "Vendkalim i shënuar për këmbësorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/vendkalim-i-shenuar-per-kembesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 37
+        }
+      ]
+    },
+    {
+      "slug": "femije-ne-rruge",
+      "name": "Fëmijë në rrugë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/femije-ne-rruge.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 38
+        }
+      ]
+    },
+    {
+      "slug": "vendkalim-i-shenuar-per-shteg-bicikletash",
+      "name": "Vendkalim i shënuar për shteg biçikletash",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/vendkalim-i-shenuar-per-shteg-bicikletash.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 39
+        }
+      ]
+    },
+    {
+      "slug": "vendkalim-kembesoresh-nentokesor-ose-mbitokesor",
+      "name": "Vendkalim këmbësorësh nëntokësor ose mbitokësor",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/vendkalim-kembesoresh-nentokesor-ose-mbitokesor.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 40
+        }
+      ]
+    },
+    {
+      "slug": "spital",
+      "name": "Spital",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/spital.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 41
+        },
+        {
+          "category": "sherbimesh",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "stacion-policor",
+      "name": "Stacion Policor",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/stacion-policor.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 42
+        },
+        {
+          "category": "sherbimesh",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "stacion-per-ndihme-te-pare",
+      "name": "Stacion për ndihmë të parë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/stacion-per-ndihme-te-pare.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 43
+        },
+        {
+          "category": "sherbimesh",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "taxi-vendqendrim",
+      "name": "TAXI - Vendqëndrim",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/taxi-vendqendrim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 44
+        },
+        {
+          "category": "sherbimesh",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "pompe-benzini",
+      "name": "Pompë benzini",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/pompe-benzini.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 45
+        },
+        {
+          "category": "sherbimesh",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "telefon",
+      "name": "Telefon",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/telefon.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 46
+        },
+        {
+          "category": "sherbimesh",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "punetori-per-rregullim-te-automjeteve-oficine",
+      "name": "Punëtori për rregullim të automjeteve (ofiçinë)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/punetori-per-rregullim-te-automjeteve-oficine.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 47
+        },
+        {
+          "category": "sherbimesh",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "uje-i-pijshem",
+      "name": "Ujë i pijshëm",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/uje-i-pijshem.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 48
+        },
+        {
+          "category": "sherbimesh",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "informata",
+      "name": "Informata",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/informata.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 49
+        },
+        {
+          "category": "sherbimesh",
+          "position": 9
+        }
+      ]
+    },
+    {
+      "slug": "restorant",
+      "name": "Restorant",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/restorant.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 50
+        },
+        {
+          "category": "sherbimesh",
+          "position": 10
+        }
+      ]
+    },
+    {
+      "slug": "kafeteri",
+      "name": "Kafeteri",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/kafeteri.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 51
+        },
+        {
+          "category": "sherbimesh",
+          "position": 11
+        }
+      ]
+    },
+    {
+      "slug": "tualet-wc",
+      "name": "Tualet (WC)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/tualet-wc.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 52
+        },
+        {
+          "category": "sherbimesh",
+          "position": 12
+        }
+      ]
+    },
+    {
+      "slug": "hotel-ose-motel",
+      "name": "Hotel ose Motel",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/hotel-ose-motel.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 53
+        },
+        {
+          "category": "sherbimesh",
+          "position": 13
+        }
+      ]
+    },
+    {
+      "slug": "teren-per-kamping-ne-kamp-shtepiza",
+      "name": "Teren për kamping në kamp shtëpiza",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/teren-per-kamping-ne-kamp-shtepiza.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 54
+        },
+        {
+          "category": "sherbimesh",
+          "position": 14
+        }
+      ]
+    },
+    {
+      "slug": "teren-per-kamping-nen-tenda",
+      "name": "Teren për kamping nën tenda",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/teren-per-kamping-nen-tenda.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 55
+        },
+        {
+          "category": "sherbimesh",
+          "position": 15
+        }
+      ]
+    },
+    {
+      "slug": "teren-per-kamping-me-automjete",
+      "name": "Teren për kamping me automjete",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/teren-per-kamping-me-automjete.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 56
+        },
+        {
+          "category": "sherbimesh",
+          "position": 16
+        }
+      ]
+    },
+    {
+      "slug": "shtepi-malore",
+      "name": "Shtëpi malore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shtepi-malore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 57
+        },
+        {
+          "category": "sherbimesh",
+          "position": 17
+        }
+      ]
+    },
+    {
+      "slug": "teren-i-rregulluar-per-piknik",
+      "name": "Teren i rregulluar për piknik",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/teren-i-rregulluar-per-piknik.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 58
+        },
+        {
+          "category": "sherbimesh",
+          "position": 18
+        }
+      ]
+    },
+    {
+      "slug": "vendqendrim-per-autobuse",
+      "name": "Vendqëndrim për autobusë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/vendqendrim-per-autobuse.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 59
+        },
+        {
+          "category": "sherbimesh",
+          "position": 19
+        }
+      ]
+    },
+    {
+      "slug": "aeroport",
+      "name": "Aeroport",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/aeroport.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 60
+        },
+        {
+          "category": "sherbimesh",
+          "position": 20
+        }
+      ]
+    },
+    {
+      "slug": "stacion-per-tramvaj",
+      "name": "Stacion për tramvaj",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/stacion-per-tramvaj.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 61
+        },
+        {
+          "category": "sherbimesh",
+          "position": 21
+        }
+      ]
+    },
+    {
+      "slug": "port-detar-traekt",
+      "name": "Port detar - traekt",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/port-detar-traekt.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 62
+        },
+        {
+          "category": "sherbimesh",
+          "position": 22
+        }
+      ]
+    },
+    {
+      "slug": "rreshtimi-i-automjeteve",
+      "name": "Rreshtimi i automjeteve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rreshtimi-i-automjeteve.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 63
+        },
+        {
+          "category": "drejtimi",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "rruge-pa-dalje",
+      "name": "Rrugë pa dalje",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rruge-pa-dalje.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 64
+        },
+        {
+          "category": "drejtimi",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "udhetregues-per-anashkalim",
+      "name": "Udhëtregues për anashkalim",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/udhetregues-per-anashkalim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 65
+        },
+        {
+          "category": "drejtimi",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "parashenje-per-mbylljen-e-korsise",
+      "name": "Parashenjë për mbylljen e korsisë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/parashenje-per-mbylljen-e-korsise.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 66
+        }
+      ]
+    },
+    {
+      "slug": "mbyllja-e-korsise",
+      "name": "Mbyllja e korsisë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbyllja-e-korsise.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 67
+        }
+      ]
+    },
+    {
+      "slug": "parashenje-per-ridrejtim-te-komunikacionit-ne-rr",
+      "name": "Parashenjë për ridrejtim të komunikacionit në rrugë me shirita rrugorë të ndarë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/parashenje-per-ridrejtim-te-komunikacionit-ne-rr.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 68
+        }
+      ]
+    },
+    {
+      "slug": "shenje-per-ridrejtim-te-komunikacionit-ne-rruge",
+      "name": "Shenjë për ridrejtim të komunikacionit në rrugë të ndarë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shenje-per-ridrejtim-te-komunikacionit-ne-rruge.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 69
+        }
+      ]
+    },
+    {
+      "slug": "kahe-per-anashkalim-per-disa-lloje-te-automjetev",
+      "name": "Kahe për anashkalim për disa lloje të automjeteve (drejt)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/kahe-per-anashkalim-per-disa-lloje-te-automjetev.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 70
+        },
+        {
+          "category": "drejtimi",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "kahe-per-anashkalim-per-disa-lloje-te-automjetev-84",
+      "name": "Kahe për anashkalim për disa lloje të automjeteve (djathtas)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/kahe-per-anashkalim-per-disa-lloje-te-automjetev-84.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 71
+        },
+        {
+          "category": "drejtimi",
+          "position": 5
+        }
+      ]
+    },
+    {
+      "slug": "korsi-e-dedikuar-per-lloje-te-caktuara-automjete",
+      "name": "Korsi e dedikuar për lloje të caktuara automjetesh",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/korsi-e-dedikuar-per-lloje-te-caktuara-automjete.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 72
+        }
+      ]
+    },
+    {
+      "slug": "korsi-me-shenje-komunikacioni-te-futur",
+      "name": "Korsi me shenjë komunikacioni të futur",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/korsi-me-shenje-komunikacioni-te-futur.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 73
+        }
+      ]
+    },
+    {
+      "slug": "parashenje-per-rregullim-te-komunikacionit-me-do",
+      "name": "Parashenjë për rregullim të komunikacionit me dorë",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/parashenje-per-rregullim-te-komunikacionit-me-do.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 74
+        }
+      ]
+    },
+    {
+      "slug": "rreshtimi-i-automjeteve-me-emertim-te-vendbanime",
+      "name": "Rreshtimi i automjeteve me emërtim të vendbanimeve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/rreshtimi-i-automjeteve-me-emertim-te-vendbanime.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 75
+        },
+        {
+          "category": "destinacioni",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "parashenje-per-anashkalim",
+      "name": "Parashenjë për anashkalim",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/parashenje-per-anashkalim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 76
+        },
+        {
+          "category": "destinacioni",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "korsi-e-posacme-per-transport-publik-te-udhetare",
+      "name": "Korsi e posaçme për transport publik të udhëtarëve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/korsi-e-posacme-per-transport-publik-te-udhetare.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 77
+        }
+      ]
+    },
+    {
+      "slug": "mbarim-i-korsise-se-posacme-per-transport-publik",
+      "name": "Mbarim i korsisë së posaçme për transport publik të udhëtarëve",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/mbarim-i-korsise-se-posacme-per-transport-publik.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 78
+        }
+      ]
+    },
+    {
+      "slug": "shpejtesi-e-lejuar-ne-korsi-te-posacme-te-komuni",
+      "name": "Shpejtësi e lejuar në korsi të posaçme të komunikacionit",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shpejtesi-e-lejuar-ne-korsi-te-posacme-te-komuni.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 79
+        }
+      ]
+    },
+    {
+      "slug": "korsi-e-posacme-per-transport-publik-te-udhetare-93",
+      "name": "Korsi e posaçme për transport publik të udhëtarëve (BUS)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/korsi-e-posacme-per-transport-publik-te-udhetare-93.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 80
+        }
+      ]
+    },
+    {
+      "slug": "numri-i-autostrades",
+      "name": "Numri i autostradës",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/numri-i-autostrades.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 81
+        },
+        {
+          "category": "standarde",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "numri-i-rruges-nderkombetare",
+      "name": "Numri i rrugës ndërkombëtare",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/numri-i-rruges-nderkombetare.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 82
+        },
+        {
+          "category": "standarde",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "numri-i-rruges-ekspres-rruge-magjistrale-dhe-rru",
+      "name": "Numri i rrugës ekspres, rrugë magjistrale dhe rrugë e rezervuar vetëm për automjete motorike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/numri-i-rruges-ekspres-rruge-magjistrale-dhe-rru.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 83
+        },
+        {
+          "category": "standarde",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "numri-i-rruges-regjionale",
+      "name": "Numri i rrugës regjionale",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/numri-i-rruges-regjionale.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 84
+        },
+        {
+          "category": "standarde",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "paraudhetregues",
+      "name": "Paraudhëtregues",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/paraudhetregues.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 85
+        },
+        {
+          "category": "destinacioni",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "tabele-paraudhetreguese-per-dalje",
+      "name": "Tabelë paraudhëtreguese për dalje",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/tabele-paraudhetreguese-per-dalje.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 86
+        },
+        {
+          "category": "destinacioni",
+          "position": 4
+        }
+      ]
+    },
+    {
+      "slug": "ndalim-i-hyrjes-i-disa-llojeve-te-caktuara-te-mj",
+      "name": "Ndalim i hyrjes i disa llojeve të caktuara të mjeteve në autostradë ose në rrugë të rezervuar për komunikacion të mjeteve motorike",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/ndalim-i-hyrjes-i-disa-llojeve-te-caktuara-te-mj.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 87
+        }
+      ]
+    },
+    {
+      "slug": "lajmerim-per-pagese-rrugore",
+      "name": "Lajmërim për pagesë rrugore",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/lajmerim-per-pagese-rrugore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 88
+        }
+      ]
+    },
+    {
+      "slug": "shenja-e-largesise-deri-te-dalja-100-200-300-m",
+      "name": "Shenja e largësisë deri te dalja (100, 200, 300 m)",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shenja-e-largesise-deri-te-dalja-100-200-300-m.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 89
+        },
+        {
+          "category": "drejtimi",
+          "position": 6
+        }
+      ]
+    },
+    {
+      "slug": "shenje-per-numrin-e-daljes-ose-nyjes",
+      "name": "Shenjë për numrin e daljes ose nyjes",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shenje-per-numrin-e-daljes-ose-nyjes.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 90
+        },
+        {
+          "category": "drejtimi",
+          "position": 7
+        }
+      ]
+    },
+    {
+      "slug": "shenje-per-nyje-te-autostradave",
+      "name": "Shenjë për nyje të autostradave",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shenje-per-nyje-te-autostradave.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 91
+        },
+        {
+          "category": "drejtimi",
+          "position": 8
+        }
+      ]
+    },
+    {
+      "slug": "shtrirje-apo-zgjatje-e-rruges-me-perparesi-kalim",
+      "name": "Shtrirje apo zgjatje e rrugës me përparësi kalimi",
+      "description": "",
+      "keywords": "",
+      "imageUrl": "/signs/lajmerimit/shtrirje-apo-zgjatje-e-rruges-me-perparesi-kalim.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "lajmerimit",
+          "position": 92
+        }
+      ]
+    },
+    {
+      "slug": "sheshe-lagje",
+      "name": "Tabela për Sheshe & Lagje",
+      "description": "Tabela identifikuese për shesh, lagje apo zonë urbane specifike.",
+      "keywords": "",
+      "imageUrl": "/categories/tabela-per-sheshe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "street-name-plates",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "shtylla-metalike",
+      "name": "Shtylla Metalike",
+      "description": "Struktura vertikale për montimin e qëndrueshëm të sinjalistikës rrugore.",
+      "keywords": "",
+      "imageUrl": "/categories/shtylla-metalike.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "poles-brackets",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "mbajtese-njeshe",
+      "name": "Mbajtëse për Shenja të Vetme",
+      "description": "Mbajtëse për montimin e një shenje të vetme mbi shtyllë.",
+      "keywords": "",
+      "imageUrl": "/categories/mbajtese-njeshe.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "poles-brackets",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "mbajtese-shumefishta",
+      "name": "Mbajtëse për Shenja të Shumëfishta",
+      "description": "Mbajtëse që lejojnë montimin e disa shenjave njëkohësisht mbi të njëjtën shtyllë.",
+      "keywords": "",
+      "imageUrl": "/categories/mbajtese-shumefishta.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "poles-brackets",
+          "position": 3
+        }
+      ]
+    },
+    {
+      "slug": "krah-i-vetem",
+      "name": "Portal me Krah të Vetëm",
+      "description": "Strukturë me krah anësor për vendosjen e sinjalistikës mbi një pjesë të rrugës.",
+      "keywords": "",
+      "imageUrl": "/categories/portal-krah-vetem.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "signage-portals",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "krah-i-dyfishte",
+      "name": "Portal me Krah të Dyfishtë",
+      "description": "Strukturë që kalon mbi të gjithë gjerësinë e rrugës për shikueshmëri maksimale.",
+      "keywords": "",
+      "imageUrl": "/categories/portal-krah-dyfishte.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "signage-portals",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "led-integruar",
+      "name": "Shenja me LED të Integruar",
+      "description": "Sinjalistikë me ndriçim të integruar për shikueshmëri gjatë natës.",
+      "keywords": "",
+      "imageUrl": "/categories/led-integruar.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "led-signage",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "panel-mesazh",
+      "name": "Panel me Mesazh të Ndryshueshëm",
+      "description": "Panele elektronike që shfaqin mesazhe ose paralajmërime të ndryshueshme.",
+      "keywords": "",
+      "imageUrl": "/categories/panel-mesazh.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "led-signage",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "kone-standarde",
+      "name": "Kone Standarde",
+      "description": "Kone të lehta për përcaktim të përkohshëm të zonave dhe devijimeve.",
+      "keywords": "",
+      "imageUrl": "/categories/kone-standarde.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "traffic-cones",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "kone-baze-e-rende",
+      "name": "Kone me Bazë të Rëndë",
+      "description": "Kone me bazë të qëndrueshme për kushte me erë ose trafik intensiv.",
+      "keywords": "",
+      "imageUrl": "/categories/kone-baze-e-rende.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "traffic-cones",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "shtylla-delineatore",
+      "name": "Shtylla Delineatore",
+      "description": "Shtylla anësore që ndihmojnë në orientimin e drejtuesve përgjatë rrugës.",
+      "keywords": "",
+      "imageUrl": "/categories/shtylla-delineatore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "delineators",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "reflektore-anesore",
+      "name": "Reflektorë Anësorë",
+      "description": "Elemente reflektuese për shikueshmëri të përmirësuar gjatë natës.",
+      "keywords": "",
+      "imageUrl": "/categories/reflektore-anesore.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "delineators",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "barriera-plastike",
+      "name": "Barriera Plastike",
+      "description": "Barriera të lehta për ndarjen e përkohshme të zonave të punës.",
+      "keywords": "",
+      "imageUrl": "/categories/barriera-plastike.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "barriers",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "gardhe-ndarese",
+      "name": "Gardhe Ndarëse",
+      "description": "Gardhe për izolimin e kantiereve dhe zonave në ndërtim.",
+      "keywords": "",
+      "imageUrl": "/categories/gardhe-ndarese.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "barriers",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "pasqyra-konvekse",
+      "name": "Pasqyra Konvekse",
+      "description": "Pasqyra me kënd të gjerë pamjeje për zona me shikueshmëri të kufizuar.",
+      "keywords": "",
+      "imageUrl": "/categories/pasqyra-konvekse.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "traffic-mirrors",
+          "position": 1
+        }
+      ]
+    },
+    {
+      "slug": "pasqyra-kryqezime",
+      "name": "Pasqyra për Kryqëzime",
+      "description": "Pasqyra të pozicionuara për të përmirësuar shikueshmërinë në kryqëzime.",
+      "keywords": "",
+      "imageUrl": "/categories/pasqyra-kryqezime.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "traffic-mirrors",
+          "position": 2
+        }
+      ]
+    },
+    {
+      "slug": "barriera-parkimi",
+      "name": "Barriera Parkimi",
+      "description": "Barriera për kontrollin e hyrjes dhe daljes në hapësira parkimi.",
+      "keywords": "",
+      "imageUrl": "/categories/barriera-parkimi.webp",
+      "imageFit": "contain",
+      "placements": [
+        {
+          "category": "parking-solutions",
+          "position": 2
+        }
+      ]
+    }
+  ]
+}

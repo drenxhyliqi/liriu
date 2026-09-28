@@ -31,22 +31,44 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "change-me-in-env"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 12
 
-    # Cloudinary. Product/variant images are uploaded directly from the
-    # admin UI to Cloudinary (the API only issues a signed upload
-    # signature - see services/cloudinary.py) so large image bytes never
-    # transit this server.
-    CLOUDINARY_CLOUD_NAME: str = ""
-    CLOUDINARY_API_KEY: str = ""
-    CLOUDINARY_API_SECRET: str = ""
+    # Uploaded images are stored on disk under MEDIA_DIR and served at
+    # /media/... In production MEDIA_DIR must be a persistent volume.
+    MEDIA_DIR: str = "media"
+
+    # New-order email notifications via Resend (https://resend.com). With no
+    # API key, orders are still saved - the email is just skipped (logged).
+    RESEND_API_KEY: str = ""
+    # Comma-separated. Replace with the company's own address once its domain is set up.
+    ORDER_NOTIFY_EMAILS: str = "xhyliqiidren@gmail.com"
+    # Resend only sends from domains verified in the Resend account. Until the
+    # company domain is verified, onboarding@resend.dev works - but only to the
+    # email address the Resend account was created with.
+    MAIL_FROM: str = "NSH LIRIU <onboarding@resend.dev>"
+    # Public address of the Next.js site, for "open in dashboard" links and images.
+    SITE_URL: str = "http://localhost:3000"
+
+    @property
+    def order_notify_list(self) -> list[str]:
+        return [e.strip() for e in self.ORDER_NOTIFY_EMAILS.split(",") if e.strip()]
 
     @property
     def cors_origins_list(self) -> list[str]:
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
 
 
+_PLACEHOLDER_SECRET = "change-me-in-env"
+
+
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    settings = Settings()
+    if settings.SECRET_KEY == _PLACEHOLDER_SECRET or len(settings.SECRET_KEY) < 32:
+        # Anyone who knows the key can mint admin tokens - never run with the example value.
+        raise RuntimeError(
+            "SECRET_KEY is missing or too short. Set it in backend/.env: "
+            'python -c "import secrets; print(secrets.token_hex(32))"'
+        )
+    return settings
 
 
 settings = get_settings()

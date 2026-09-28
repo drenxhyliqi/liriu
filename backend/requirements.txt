@@ -8,4 +8,4 @@ pydantic-settings==2.7.1
 python-jose[cryptography]==3.3.0
 bcrypt==4.2.1
 python-multipart==0.0.20
-cloudinary==1.41.0
+pillow==11.1.0

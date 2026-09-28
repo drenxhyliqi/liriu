@@ -10,21 +10,20 @@ if TYPE_CHECKING:
 
 
 class OrderItem(Base):
-    """A line item on an order request. Deliberately a snapshot, not a
-    foreign key to `Product`/`ProductVariant` - mirrors the frontend's
-    `CartItem` (name, groupName, quantity, and the slugs) as sent by
-    /api/orders today. A snapshot means a catalog edit or deletion months
-    later can never silently rewrite what a customer actually asked for.
+    """A snapshot of what the customer requested, not a foreign key to
+    `products` - editing or deleting a product later must never rewrite
+    what was actually asked for. `product_slug` is kept so the admin can
+    still jump to the product while it exists.
     """
 
     __tablename__ = "order_items"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    order_id: Mapped[int] = mapped_column(ForeignKey("orders.id"), nullable=False)
+    order_id: Mapped[int] = mapped_column(ForeignKey("orders.id", ondelete="CASCADE"), nullable=False, index=True)
     order: Mapped["Order"] = relationship(back_populates="items")
 
-    product_slug: Mapped[str] = mapped_column(String(120), nullable=False)
-    variant_slug: Mapped[str | None] = mapped_column(String(120))
-    name: Mapped[str] = mapped_column(String(200), nullable=False)
-    group_name: Mapped[str] = mapped_column(String(200), nullable=False)
+    product_slug: Mapped[str | None] = mapped_column(String(120))
+    name: Mapped[str] = mapped_column(String(300), nullable=False)
+    group_name: Mapped[str] = mapped_column(String(200), nullable=False, default="")
+    image_url: Mapped[str | None] = mapped_column(String(500))
     quantity: Mapped[int] = mapped_column(Integer, nullable=False, default=1)

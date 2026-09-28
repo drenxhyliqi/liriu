@@ -7,8 +7,6 @@ import { cn } from "@/lib/utils";
 
 interface AddToCartButtonProps {
   productSlug: string;
-  variantSlug?: string;
-  signSlug?: string;
   image?: { src: string; alt: string };
   name: string;
   groupName: string;
@@ -18,8 +16,6 @@ interface AddToCartButtonProps {
 
 export function AddToCartButton({
   productSlug,
-  variantSlug,
-  signSlug,
   image,
   name,
   groupName,
@@ -33,9 +29,8 @@ export function AddToCartButton({
     event.preventDefault();
     event.stopPropagation();
     addItem({
-      key: [productSlug, variantSlug, signSlug].filter(Boolean).join(":"),
+      key: productSlug,
       productSlug,
-      variantSlug,
       name,
       groupName,
       image,

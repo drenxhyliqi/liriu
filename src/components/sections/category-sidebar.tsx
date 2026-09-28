@@ -10,7 +10,7 @@ import {
   Signpost,
   TrafficCone,
 } from "lucide-react";
-import { getProductsByGroup, productGroups } from "@/lib/data/products";
+import type { SidebarTree } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
 
 const groupIcons: Record<string, LucideIcon> = {
@@ -21,13 +21,14 @@ const groupIcons: Record<string, LucideIcon> = {
 };
 
 interface CategorySidebarProps {
+  tree: SidebarTree;
   /** `null` = "Të Gjitha" (all products) is active. */
   activeGroupSlug: string | null;
-  /** The product currently being viewed, if on a product detail page - highlighted in its group's expanded list. */
+  /** The second-level category the current page sits under - highlighted in its group's list. */
   activeProductSlug?: string;
 }
 
-export function CategorySidebar({ activeGroupSlug, activeProductSlug }: CategorySidebarProps) {
+export function CategorySidebar({ tree, activeGroupSlug, activeProductSlug }: CategorySidebarProps) {
   // Whichever group is currently active starts expanded, so a product page
   // shows you where it sits in the tree.
   const [expandedGroups, setExpandedGroups] = React.useState<Set<string>>(
@@ -61,17 +62,17 @@ export function CategorySidebar({ activeGroupSlug, activeProductSlug }: Category
             <ChevronRight aria-hidden className="h-4 w-4 shrink-0 text-muted" />
           </Link>
 
-          {productGroups.map((group) => {
+          {tree.map((group) => {
             const Icon = groupIcons[group.slug] ?? Signpost;
             const active = activeGroupSlug === group.slug;
             const expanded = expandedGroups.has(group.slug);
-            const groupProducts = getProductsByGroup(group.slug);
+            const groupProducts = group.children;
 
             return (
               <div key={group.slug} className="border-b border-line last:border-b-0">
                 <div className={cn("flex items-center transition-colors", active && "bg-surface")}>
                   <Link
-                    href={`/products?category=${group.slug}`}
+                    href={`/products/${group.slug}`}
                             className="flex flex-1 items-center gap-3 py-4 pl-5 pr-2 text-left hover:bg-surface"
                   >
                     <Icon

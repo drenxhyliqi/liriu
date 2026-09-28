@@ -6,19 +6,21 @@ import { ArrowUpRight, Search, Signpost, X } from "lucide-react";
 import { AddToCartButton } from "@/components/sections/add-to-cart-button";
 import { ProductMedia } from "@/components/sections/product-media";
 import { productIcons } from "@/components/sections/product-icons";
-import type { ProductImage } from "@/types";
+import type { ImageFit } from "@/types/catalog";
 
 export interface GridCard {
   key: string;
   href: string;
   name: string;
-  image?: ProductImage;
+  image?: { src: string; fit: ImageFit } | null;
+  /** Shown under the name - used for category cards at the top levels. */
+  description?: string | null;
   /** Small label above the name (e.g. the sub-category in search results). */
   tag?: string;
   /** Extra searchable words, not displayed. */
   keywords?: string;
   /** Present only for real products; sub-categories are plain links. */
-  cart?: { productSlug: string; variantSlug?: string; signSlug?: string; groupName: string };
+  cart?: { productSlug: string; groupName: string };
 }
 
 const PAGE_SIZE = 12;
@@ -36,6 +38,7 @@ export function CardGrid({
   iconKey,
   searchable,
   searchPool,
+  alwaysShowTags,
 }: {
   cards: GridCard[];
   iconKey: string;
@@ -43,6 +46,8 @@ export function CardGrid({
   searchable?: boolean;
   /** When set, searching looks through these cards instead of `cards`. */
   searchPool?: GridCard[];
+  /** Show each card's tag even when not searching. */
+  alwaysShowTags?: boolean;
 }) {
   const [query, setQuery] = React.useState("");
   const [visible, setVisible] = React.useState(PAGE_SIZE);
@@ -64,7 +69,7 @@ export function CardGrid({
       {searchable && (
         <div className="mt-8">
           <label htmlFor="sign-search" className="sr-only">
-            Kërko shenjë
+            Kërko produkt
           </label>
           <div className="relative">
             <Search
@@ -79,7 +84,7 @@ export function CardGrid({
                 setQuery(event.target.value);
                 setVisible(PAGE_SIZE);
               }}
-              placeholder="Kërko shenjë..."
+              placeholder="Kërko produkt ose shenjë..."
               autoComplete="off"
               className="h-12 w-full border border-line bg-paper pl-11 pr-11 text-[15px] text-ink outline-none transition-colors placeholder:text-muted focus:border-ink [&::-webkit-search-cancel-button]:hidden"
             />
@@ -107,9 +112,9 @@ export function CardGrid({
 
       {shown.length === 0 ? (
         <div className="mt-10 border border-line p-8 md:p-12">
-          <p className="font-display text-lg font-medium text-ink">Asnjë shenjë nuk u gjet.</p>
+          <p className="font-display text-lg font-medium text-ink">Asnjë produkt nuk u gjet.</p>
           <p className="mt-3 max-w-xl leading-relaxed text-muted">
-            Provoni një fjalë tjetër, ose na kontaktoni për shenjën që ju nevojitet.
+            Provoni një fjalë tjetër, ose na kontaktoni për produktin që ju nevojitet.
           </p>
         </div>
       ) : (
@@ -117,7 +122,13 @@ export function CardGrid({
           {shown.slice(0, visible).map((card) => (
             <div key={card.key} className="min-w-0">
               <Link href={card.href} className="group block">
-                <ProductMedia image={card.image} fit="contain" Icon={Icon} iconClassName="h-14 w-14">
+                <ProductMedia
+                  src={card.image?.src}
+                  alt={card.name}
+                  fit={card.image?.fit ?? "contain"}
+                  Icon={Icon}
+                  iconClassName="h-14 w-14"
+                >
                   <ArrowUpRight
                     aria-hidden
                     className="absolute right-4 top-4 h-5 w-5 -translate-x-1 translate-y-1 text-red opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100"
@@ -126,7 +137,7 @@ export function CardGrid({
               </Link>
               <div className="mt-3 flex items-start justify-between gap-2 sm:mt-5 sm:gap-3">
                 <Link href={card.href} className="group min-w-0">
-                  {card.tag && searching && (
+                  {card.tag && (searching || alwaysShowTags) && (
                     <p className="mb-1 text-[10px] font-medium uppercase tracking-[0.1em] text-red sm:text-xs">
                       {card.tag}
                     </p>
@@ -137,14 +148,17 @@ export function CardGrid({
                   >
                     {card.name}
                   </h3>
+                  {card.description && (
+                    <p className="mt-1.5 line-clamp-2 text-[12px] leading-relaxed text-muted sm:mt-2 sm:text-[14px]">
+                      {card.description}
+                    </p>
+                  )}
                 </Link>
                 {card.cart && (
                   <AddToCartButton
                     variant="compact"
                     productSlug={card.cart.productSlug}
-                    variantSlug={card.cart.variantSlug}
-                    signSlug={card.cart.signSlug}
-                    image={card.image && { src: card.image.src, alt: card.image.alt }}
+                    image={card.image ? { src: card.image.src, alt: card.name } : undefined}
                     name={card.name}
                     groupName={card.cart.groupName}
                     className="shrink-0"

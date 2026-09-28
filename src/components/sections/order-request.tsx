@@ -34,6 +34,7 @@ export function OrderRequest() {
           phone: String(data.get("phone") ?? ""),
           note: String(data.get("note") ?? ""),
           items: items.map((item) => ({
+            productSlug: item.productSlug,
             name: item.name,
             groupName: item.groupName,
             quantity: item.quantity,

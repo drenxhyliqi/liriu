@@ -1,134 +1,126 @@
 # NSH LIRIU — backend
 
-FastAPI + PostgreSQL (via Docker) + Cloudinary for images. This is the
-service the `/admin` dashboard and the public catalog/order/contact pages
-will eventually call instead of static data files and console.log.
-
-**Status: scaffold, verified working, not yet wired to the frontend.**
-Every endpoint below was actually run against a real Postgres in Docker
-while building this (migration applied, admin created, full
-category → product → variant → order/contact flow exercised with curl) —
-it's not just code that looks right. What's *not* done is connecting the
-Next.js app to it; that's the next phase, not part of this one.
+FastAPI + PostgreSQL (Docker). It is the source of truth for the product
+catalog, quote requests (orders), contact messages and admin accounts. The
+Next.js app talks to it server-side only - the browser never calls this API
+directly.
 
 ## Stack
 
-- **FastAPI** — REST API, `/docs` for interactive OpenAPI docs
-- **PostgreSQL 16** — via `docker-compose`'s `db` service
-- **SQLAlchemy 2.0 + Alembic** — ORM + migrations
-- **Cloudinary** — product/variant images. The API never stores or proxies
-  image bytes — it only issues a signed upload signature
-  (`GET /api/v1/uploads/signature`), the admin browser uploads directly to
-  Cloudinary, and the resulting URL gets PATCHed onto the product/variant.
-- **JWT (python-jose) + bcrypt** — admin auth. No public signup — admins
-  are provisioned via a CLI script (see below), since this is a
-  single-team internal CMS, not a multi-tenant product.
-
-## Data model → frontend mapping
-
-| Table | Mirrors (frontend) | Notes |
-|---|---|---|
-| `categories` | `ProductGroup` (src/types/index.ts) | top-level catalog group |
-| `products` | `Product` | now has `imageUrl`/`imagePublicId` — the static data doesn't yet |
-| `product_variants` | `ProductVariant` | the "different designs" shown at `/products/[slug]/[variant]` |
-| `orders` + `order_items` | `CartItem` submitted by order-request.tsx | `order_items` is a denormalized snapshot (name/groupName/quantity/slugs), not a live FK to `products` — a later catalog edit must never rewrite what a customer actually requested |
-| `contact_messages` | the /contact form payload | mirrors /api/contact's shape exactly |
-| `admin_users` | — | new; backs real admin login |
-
-Every JSON field on the wire is **camelCase** (`groupName`, `productSlug`,
-`createdAt`, ...) to match the conventions already used throughout the
-Next.js types — see `app/schemas/base.py`.
+- **FastAPI** - REST API, interactive docs at `/docs`
+- **PostgreSQL 16** - `docker compose`'s `db` service
+- **SQLAlchemy 2.0 + Alembic** - ORM and migrations
+- **Pillow** - uploaded images are converted to compressed WebP (max 1600px,
+  transparency kept) and stored on disk under `MEDIA_DIR`, served at `/media/...`
+- **JWT + bcrypt** - admin auth. No public signup: the first owner is created
+  from a shell, then owners add admins from the dashboard.
 
 ## Running it
 
 ```bash
-cp backend/.env.example backend/.env   # fill in real Cloudinary creds when you have them
+cp backend/.env.example backend/.env     # then set a real SECRET_KEY
 docker compose up -d --build
 docker compose exec api alembic upgrade head
-docker compose exec api python -m scripts.create_admin you@example.com "some-strong-password"
+docker compose exec api python -m scripts.seed_catalog          # starter catalog (empty DB only)
+docker compose exec api python -m scripts.create_admin you@example.com "strong-password" "Emri Mbiemri"
 ```
 
-API is then at `http://localhost:8000` (`/docs` for the interactive schema),
-Postgres at `localhost:5432`.
+API at `http://localhost:8000` (`/docs`), Postgres at `localhost:5432`. In
+dev the compose file runs uvicorn with `--reload`.
 
-## What's implemented vs. what's a stub
+The frontend reads `API_URL` (default `http://localhost:8000`, see the root
+`.env.example`).
 
-**Fully working**, verified end-to-end:
-- Categories, products, variants — full CRUD (list/get public, write/delete
-  admin-only)
-- Orders — public create (matches `/api/orders`'s payload), admin list/get,
-  status triage (`new` → `contacted` → `closed`)
-- Contact messages — public create (matches `/api/contact`'s payload),
-  admin list, mark-as-read
-- Admin auth — JWT login, `/auth/me`, route guard
-- Cloudinary upload signature endpoint
+## Data model
 
-**Deliberately not done here** — next-phase work, not oversights:
-- **Frontend integration.** The Next.js routes (`/api/orders`,
-  `/api/contact`, `/api/auth/login`) still log-and-discard, same as before
-  this backend existed. Swapping them to call this API is a separate pass —
-  see "Wiring up the frontend" below.
-- **Email delivery** on contact messages — see `[[contact_form_not_wired]]`
-  memory: still needs a confirmed destination address and a provider (e.g.
-  Resend), independent of this persistence layer.
-- **Cloudinary asset cleanup.** `services/cloudinary.py::delete_asset` exists
-  but isn't called from the product/variant endpoints yet — replacing or
-  deleting an image currently orphans the old Cloudinary asset instead of
-  removing it.
-- **Refresh tokens / logout / password reset.** Login issues a 12-hour JWT
-  and that's the whole session model for now.
-- **Rate limiting, request logging, structured error responses beyond
-  FastAPI's default `{"detail": ...}` shape.**
-- **Tests.** Verified manually via curl during development (see git history
-  around this file), not via an automated suite yet.
+| Table | What it is |
+|---|---|
+| `categories` | Catalog tree, any depth (`parent_id`). Inactive hides the whole branch from the site. |
+| `products` | Anything that can go in a quote request - a sign, a cone, a pole. |
+| `product_categories` | Product <-> category links with a per-category `position`. A product can be in several categories (e.g. "Vendparkim" in both Lajmërimit and Parkim). |
+| `orders` + `order_items` | Quote requests from `/porosia`. Items are a snapshot (name, category, image, quantity), not FKs, so later catalog edits never rewrite what a customer asked for. `status`: new → contacted → quoted → closed, plus an internal `admin_note`. |
+| `contact_messages` | `/contact` form submissions, with `is_read`. |
+| `admin_users` | Dashboard logins. `role`: `owner` (can manage users) or `admin`. |
 
-## Wiring up the frontend (the next phase, not done yet)
+Category and product slugs share one namespace, because the site serves both
+at `/products/[slug]` (see `services/slugs.py`).
 
-1. Point the three existing Next.js route handlers at this API instead of
-   `console.log`:
-   - `src/app/api/orders/route.ts` → `POST {API_URL}/api/v1/orders`
-   - `src/app/api/contact/route.ts` → `POST {API_URL}/api/v1/contact`
-   - `src/app/api/auth/login/route.ts` → `POST {API_URL}/api/v1/auth/login`
-     (or have the login form call this API directly and skip the Next.js
-     route entirely)
-2. `order-request.tsx`'s fetch body currently sends `{name, groupName,
-   quantity}` per item — add `productSlug`/`variantSlug` (already present
-   on `CartItem`, just not included in that fetch call today) so
-   `order_items` rows aren't missing that link.
-3. Replace `src/lib/data/{products,services,...}.ts` static arrays with
-   fetches against `GET /api/v1/categories` / `/products` / `/variants`
-   once there's real catalog data in Postgres (via the admin dashboard, once
-   *that's* wired to write here instead of just rendering "not built yet"
-   empty states).
-4. Admin dashboard views (`admin-dashboard.tsx`'s `OrdersView`/
-   `MessagesView`, currently hardcoded empty states) start reading real data
-   once they call `GET /api/v1/orders` / `/contact` with the admin's JWT.
-5. Add an image upload step to the admin product/variant forms: call
-   `GET /api/v1/uploads/signature?target=products`, upload directly to
-   Cloudinary with that signature, then `PATCH` the returned `secure_url`/
-   `public_id` onto the product/variant.
+JSON is camelCase on the wire (`imageUrl`, `categoryIds`, `pageSize`), query
+parameters included.
+
+## API surface (`/api/v1`)
+
+| Endpoint | Access |
+|---|---|
+| `POST /auth/login`, `GET/PATCH /auth/me`, `POST /auth/me/password` | login is public, the rest need a token |
+| `GET /catalog` | public - active categories + products in one response, cached by the frontend |
+| `POST /orders`, `POST /contact` | public - the site's forms |
+| `GET/PATCH/DELETE /orders[/id]`, `GET/PATCH/DELETE /contact[/id]` | admin; lists are paginated and filterable |
+| `GET/POST/PATCH/DELETE /categories[/id]` | admin |
+| `GET/POST/PATCH/DELETE /products[/id]` | admin; list supports `q`, `categoryId`, `uncategorized`, `active`, paging |
+| `POST /uploads` | admin - multipart image, returns `{url}` (a `/media/...` path) |
+| `GET /stats` | admin - dashboard counts and recent activity |
+| `GET/POST/PATCH/DELETE /users[/id]` | owner only |
+
+Safeguards: category cycles are rejected; a category with subcategories can't
+be deleted; the last active owner can't be demoted, deactivated or deleted;
+public orders take product names and images from the database, not the
+client; uploaded files are deleted once nothing (product, category or order
+item) references them.
+
+## New-order emails
+
+Every quote request is saved first, then emailed to `ORDER_NOTIFY_EMAILS`
+through [Resend](https://resend.com) as a background task
+(`services/email.py`), so a mail problem never loses or delays an order. The
+email lists the customer, their note and every item with its image, links to
+the order in the dashboard, and uses the customer's address as Reply-To.
+
+Settings (`backend/.env`, then `docker compose up -d --force-recreate api`):
+- `RESEND_API_KEY` - without it, orders are saved and the email is skipped (logged).
+- `ORDER_NOTIFY_EMAILS` - comma-separated recipients.
+- `MAIL_FROM` - must be on a domain verified in Resend. The default
+  `onboarding@resend.dev` only delivers to the Resend account's own address.
+- `SITE_URL` - the public site address, used for links and images in the email.
+
+## The starter catalog
+
+`seed/catalog.json` is the catalog the site had before it moved to the
+database - every category, sign and product image (image paths like
+`/signs/...` are files in the Next.js `public/` folder). `scripts/seed_catalog.py`
+loads it into an empty database and refuses to run otherwise; `--force` wipes
+and reloads the catalog (not orders, messages or users).
+
+## Not done yet
+
+- **Email notifications for contact messages** (orders already notify - see below).
+- **Rate limiting / spam protection** on the public `POST /orders` and
+  `POST /contact`.
+- **Password reset by email** - owners can reset a password from Përdoruesit instead.
+- **Automated tests.** Verified end to end against a real database with a
+  scripted smoke test during development, but there is no committed test suite.
+- **Production deployment.** `MEDIA_DIR` must be on a persistent volume, and
+  `SECRET_KEY` / `CORS_ORIGINS` / `DATABASE_URL` set for the environment.
 
 ## Project layout
 
 ```
 backend/
   app/
-    core/       # settings (env), JWT + bcrypt helpers
-    db/         # SQLAlchemy engine/session, declarative Base
+    core/       # settings, JWT + bcrypt
+    db/         # engine/session, declarative Base
     models/     # ORM models (source of truth for the schema)
-    schemas/    # Pydantic request/response shapes (camelCase on the wire)
+    schemas/    # request/response shapes (camelCase on the wire)
     api/v1/     # routers, one file per resource
-    services/   # Cloudinary signing/deletion
-  alembic/      # migrations (versions/f1a362fa1524_initial_schema.py is the first one)
-  scripts/      # create_admin.py — the only way to provision an admin login
-  Dockerfile
-requirements.txt
+    services/   # slugs, image storage
+  alembic/      # migrations
+  seed/         # catalog.json - the starter catalog
+  scripts/      # create_admin.py, seed_catalog.py
 ```
 
 ## Local (non-Docker) dev
 
-Needs Python 3.12 (3.13 untested, 3.14 doesn't have prebuilt wheels yet for
-this pydantic-core pin — this bit the initial setup, see git history):
+Needs Python 3.12 (3.14 has no prebuilt wheels for the pinned pydantic-core):
 
 ```bash
 cd backend

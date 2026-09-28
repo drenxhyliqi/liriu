@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { redirect } from "next/navigation";
 import { LoginForm } from "@/components/sections/login-form";
+import { getToken } from "@/lib/admin/session";
+import { api } from "@/lib/api/client";
 import { company } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -18,7 +21,23 @@ const gridBackground = {
   backgroundSize: "44px 44px",
 };
 
-export default function LoginPage() {
+async function hasValidSession() {
+  const token = await getToken();
+  if (!token) return false;
+  try {
+    await api("/auth/me", { token });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export default async function LoginPage({ searchParams }: PageProps<"/login">) {
+  if (await hasValidSession()) redirect("/admin");
+  const params = await searchParams;
+  const next = typeof params.next === "string" && params.next.startsWith("/admin") ? params.next : undefined;
+  const expired = params.skaduar === "1";
+
   return (
     <div className="flex min-h-svh w-full flex-col lg:flex-row">
       {/*
@@ -124,20 +143,19 @@ export default function LoginPage() {
             <p className="mt-3 text-[15px] leading-relaxed text-muted">
               Fut kredencialet e tua për të hyrë në panelin e administrimit.
             </p>
+            {expired && (
+              <p className="mt-5 border-l-2 border-ink bg-surface px-3.5 py-3 text-[13px] text-ink">
+                Seanca juaj skadoi. Kyçuni përsëri.
+              </p>
+            )}
 
             <div className="mt-9">
-              <LoginForm />
+              <LoginForm next={next} />
             </div>
 
             <div className="mt-10 border-t border-line pt-6">
               <p className="text-[13px] leading-relaxed text-muted">
-                Qasje vetëm për administratorë. Sistemi është ende në zhvillim.{" "}
-                <Link
-                  href="/admin"
-                  className="font-medium text-ink underline underline-offset-4 transition-colors hover:text-red"
-                >
-                  Shiko pamjen paraprake
-                </Link>
+                Qasje vetëm për administratorët e {company.name}. Llogaritë e reja i krijon pronari i panelit.
               </p>
             </div>
           </div>

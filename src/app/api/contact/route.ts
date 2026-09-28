@@ -1,51 +1,23 @@
 import { NextResponse } from "next/server";
+import { api, ApiError } from "@/lib/api/client";
 
-interface ContactPayload {
-  name: string;
-  email: string;
-  phone?: string;
-  projectType?: string;
-  message: string;
-}
-
-function isValidEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-// TODO: this only logs the submission - wire it to a real email service
-// (e.g. Resend) once LIRIU confirms a destination address. See
-// CLIENT INFORMATION REQUIRED in src/lib/data/README.md. Until then,
-// submissions are received here but not delivered anywhere.
+// The /contact form posts here; this forwards to the backend, which stores
+// the message for the dashboard. No email is sent yet - that needs a
+// confirmed destination address and a provider.
 export async function POST(request: Request) {
-  let body: Partial<ContactPayload>;
-
+  let body: unknown;
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Trup i pavlefshëm kërkese." }, { status: 400 });
   }
 
-  const { name, email, phone, projectType, message } = body;
-
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return NextResponse.json(
-      { error: "Emri, email-i dhe mesazhi janë të detyrueshëm." },
-      { status: 400 },
-    );
+  try {
+    await api("/contact", { method: "POST", body: JSON.stringify(body) });
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    const status = err instanceof ApiError ? err.status : 500;
+    const message = status === 422 ? "Kontrolloni emrin, email-in dhe mesazhin." : (err as Error).message;
+    return NextResponse.json({ error: message }, { status: status >= 500 ? 502 : status });
   }
-
-  if (!isValidEmail(email)) {
-    return NextResponse.json({ error: "Email-i nuk është i vlefshëm." }, { status: 400 });
-  }
-
-  console.log("[contact] New submission:", {
-    name,
-    email,
-    phone: phone || null,
-    projectType: projectType || null,
-    message,
-    receivedAt: new Date().toISOString(),
-  });
-
-  return NextResponse.json({ ok: true });
 }
