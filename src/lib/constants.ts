@@ -9,6 +9,11 @@ export const company = {
   // Google's share links can't be embedded directly in an iframe).
   mapsEmbedUrl: "https://www.google.com/maps?q=42.3623359,20.8312462&z=16&t=k&output=embed",
   founded: 2012,
+  phone: {
+    display: "049 502 555",
+    international: "+38349502555",
+  },
+  email: "nsh.liriu@gmail.com",
   slogan: {
     sq: "Klientët tanë, reklama jonë.",
     en: "Our clients are our advertisement.",

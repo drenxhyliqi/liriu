@@ -281,7 +281,7 @@ function MobileMenu({
                 <FacebookIcon className="h-4 w-4" />
               </Link>
               <Link
-                href={`https://wa.me/${socialPlaceholder.whatsappNumber}`}
+                href={`https://wa.me/${company.phone.international.replace("+", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -290,7 +290,7 @@ function MobileMenu({
                 <WhatsAppIcon className="h-4 w-4" />
               </Link>
               <Link
-                href={`mailto:${socialPlaceholder.email}`}
+                href={`mailto:${company.email}`}
                 aria-label="Email"
                 className="flex h-9 w-9 items-center justify-center border border-line text-ink/70 transition-colors hover:border-red hover:text-red"
               >

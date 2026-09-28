@@ -63,6 +63,12 @@ export function Footer() {
               >
                 {company.location}
               </Link>
+              <a href={`tel:${company.phone.international}`} className={link}>
+                {company.phone.display}
+              </a>
+              <a href={`mailto:${company.email}`} className={link}>
+                {company.email}
+              </a>
               <Link href="/contact" className="group inline-flex items-center gap-1.5 text-[15px] text-paper transition-colors hover:text-red">
                 Na kontaktoni
                 <ArrowUpRight
@@ -83,7 +89,7 @@ export function Footer() {
                 <FacebookIcon className="h-4 w-4" />
               </Link>
               <Link
-                href={`https://wa.me/${socialPlaceholder.whatsappNumber}`}
+                href={`https://wa.me/${company.phone.international.replace("+", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -92,7 +98,7 @@ export function Footer() {
                 <WhatsAppIcon className="h-4 w-4" />
               </Link>
               <Link
-                href={`mailto:${socialPlaceholder.email}`}
+                href={`mailto:${company.email}`}
                 aria-label="Email"
                 className="flex h-9 w-9 items-center justify-center border border-white/15 text-paper/70 transition-colors hover:border-red hover:text-red"
               >

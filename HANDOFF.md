@@ -44,9 +44,10 @@ This has been enforced hard throughout the build:
   (`backend/seed/catalog.json`) uses standard road-signage terminology and
   the sign images supplied during the build - not verified LIRIU SKUs, and
   there are no prices anywhere.
-- `src/lib/social-placeholder.ts` holds **dummy** Facebook/WhatsApp/email
-  values, explicitly flagged, explicitly separate from `constants.ts`
-  (which is "verified facts only"). Swap before launch.
+- `src/lib/social-placeholder.ts` holds a **guessed** Facebook URL,
+  explicitly flagged, separate from `constants.ts` (which is "verified
+  facts only"). The client's phone (049 502 555) and email
+  (nsh.liriu@gmail.com) are confirmed and live in `constants.ts`.
 - The `/porosia` cart flow is a **quote request**, not checkout — there's
   no payment button anywhere on the site. This was an explicit decision
   after a pasted reference component included a fake "Checkout" button
@@ -138,6 +139,10 @@ afterwards.
 
 ## Next steps, roughly in order
 
+**When nshliriu.com is bought, follow `DOMAIN-LAUNCH.md`.** It covers the
+order-sensitive steps (Turnstile hostnames, Vercel/Railway env, Resend
+domain verification, switching order emails to nsh.liriu@gmail.com).
+
 1. **Create the real owner account** and remove the test login, then load
    the client's real product data through the dashboard.
 2. **Email notifications.** New quote requests already email the admin via
@@ -160,14 +165,14 @@ afterwards.
    `src/types/index.ts`), client logos (same — `Client.publishApproved`),
    service page copy (`shortDescription`/`overview`/`capabilities`/
    `process` are all currently unset on purpose).
-5. **Replace placeholder social/contact data** in
-   `src/lib/social-placeholder.ts` with the real Facebook page, WhatsApp
-   business number, and email once confirmed.
-6. **Spam protection** (rate limiting / captcha) on the public order and
-   contact endpoints before launch.
-7. **Deploy.** Frontend: any Next.js host with `API_URL` set. Backend:
-   anywhere that runs containers, with Postgres, a persistent volume for
-   `MEDIA_DIR`, and a real `SECRET_KEY`/`CORS_ORIGINS`.
+5. **Replace the placeholder Facebook URL** in
+   `src/lib/social-placeholder.ts`, and confirm 049 502 555 is on WhatsApp
+   (the WhatsApp icons now open a chat with it).
+6. ~~Spam protection~~ - done: rate limiting (slowapi) plus Cloudflare
+   Turnstile, verified on the backend (`backend/app/services/captcha.py`).
+7. ~~Deploy~~ - done: frontend on Vercel (`liriu.vercel.app`), backend and
+   Postgres on Railway (project `truthful-delight`, service `liriu`) with a
+   persistent volume at `/app/media`.
 
 ## Where to look for more context
 
