@@ -17,6 +17,10 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "NSH LIRIU API"
     API_V1_PREFIX: str = "/api/v1"
 
+    # "production" (the safe default) hides the interactive API docs and the
+    # OpenAPI schema. Set ENVIRONMENT=development locally to get /docs back.
+    ENVIRONMENT: str = "production"
+
     # Postgres. In docker-compose this points at the `db` service; for
     # local (non-Docker) dev, point it at a local Postgres instance.
     DATABASE_URL: str = "postgresql+psycopg2://liriu:liriu@localhost:5432/liriu"
@@ -54,6 +58,10 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
+
+    @property
+    def is_production(self) -> bool:
+        return self.ENVIRONMENT.strip().lower() != "development"
 
 
 _PLACEHOLDER_SECRET = "change-me-in-env"

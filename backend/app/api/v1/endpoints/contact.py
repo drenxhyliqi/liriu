@@ -1,8 +1,9 @@
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, status
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_admin, get_db
+from app.core.limiter import limiter
 from app.models.contact_message import ContactMessage
 from app.schemas.common import Page
 from app.schemas.contact_message import ContactMessageCreate, ContactMessageRead, ContactMessageUpdate
@@ -11,7 +12,10 @@ router = APIRouter()
 
 
 @router.post("", response_model=ContactMessageRead, status_code=status.HTTP_201_CREATED)
-def create_contact_message(payload: ContactMessageCreate, db: Session = Depends(get_db)) -> ContactMessage:
+@limiter.limit("5/minute;50/hour")
+def create_contact_message(
+    request: Request, payload: ContactMessageCreate, db: Session = Depends(get_db)
+) -> ContactMessage:
     """Public - what the /contact form submits. Stored for the dashboard; no
     email is sent yet (needs a confirmed destination address and a provider).
     """

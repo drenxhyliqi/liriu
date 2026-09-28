@@ -1,8 +1,9 @@
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, status
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request, status
 from sqlalchemy import or_
 from sqlalchemy.orm import Session, selectinload
 
 from app.api.deps import get_current_admin, get_db
+from app.core.limiter import limiter
 from app.models.order import Order, OrderStatus
 from app.models.order_item import OrderItem
 from app.models.product import Product
@@ -15,7 +16,10 @@ router = APIRouter()
 
 
 @router.post("", response_model=OrderRead, status_code=status.HTTP_201_CREATED)
-def create_order(payload: OrderCreate, background: BackgroundTasks, db: Session = Depends(get_db)) -> Order:
+@limiter.limit("5/minute;50/hour")
+def create_order(
+    request: Request, payload: OrderCreate, background: BackgroundTasks, db: Session = Depends(get_db)
+) -> Order:
     """Public - what /porosia submits. Item names and images are taken from
     the product record when the slug matches one, so a client can't inject
     arbitrary image URLs into the admin view. The admin is emailed after the

@@ -1,10 +1,11 @@
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_admin, get_db
-from app.core.security import create_access_token, hash_password, verify_password
+from app.core.limiter import limiter
+from app.core.security import create_access_token, dummy_verify, hash_password, verify_password
 from app.models.admin_user import AdminUser
 from app.schemas.auth import AdminRead, LoginRequest, PasswordChange, ProfileUpdate, Token
 
@@ -12,9 +13,13 @@ router = APIRouter()
 
 
 @router.post("/login", response_model=Token)
-def login(payload: LoginRequest, db: Session = Depends(get_db)) -> Token:
+@limiter.limit("10/minute;100/hour")
+def login(request: Request, payload: LoginRequest, db: Session = Depends(get_db)) -> Token:
     admin = db.query(AdminUser).filter(AdminUser.email == payload.email.lower()).first()
-    if admin is None or not verify_password(payload.password, admin.hashed_password):
+    if admin is None:
+        dummy_verify()  # equalize timing so a missing email looks like a wrong password
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Email-i ose fjalëkalimi është i pasaktë.")
+    if not verify_password(payload.password, admin.hashed_password):
         raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Email-i ose fjalëkalimi është i pasaktë.")
     if not admin.is_active:
         raise HTTPException(status.HTTP_403_FORBIDDEN, "Llogaria është çaktivizuar.")
