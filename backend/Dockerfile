@@ -17,6 +17,5 @@ COPY . .
 
 EXPOSE 8000
 
-# Shell form so $PORT (set by Railway and most hosts) is expanded; 8000 locally.
-# --proxy-headers: the app sits behind the host's HTTPS proxy.
-CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --proxy-headers --forwarded-allow-ips="*"
+# Run migrations then start the server. Shell form so $PORT is expanded.
+CMD alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --proxy-headers --forwarded-allow-ips="*"
