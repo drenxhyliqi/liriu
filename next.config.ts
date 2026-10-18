@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 // Conservative security headers applied to every response. A full
 // Content-Security-Policy is intentionally left out for now - it needs
-// browser testing against GSAP, inline styles, next/image and the contact
+// browser testing against inline styles, next/image and the contact
 // page's Google Maps iframe before it can be enabled without breaking them.
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },

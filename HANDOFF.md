@@ -74,11 +74,12 @@ Categories and products share one slug namespace, so every page lives at
 pages list subcategories, then products, with search once there are 10+
 products underneath.
 
-**Homepage**: one continuous GSAP ScrollTrigger sequence
-(`src/components/ui/story-scroll.tsx` + `homepage-story.tsx`) — panels pin
-and rotate into view on scroll, running on **every** breakpoint including
-mobile (`ScrollTrigger.config({ ignoreMobileResize: true })` + `min-h-svh`
-sizing keep the pins stable through mobile browser-chrome resize).
+**Homepage**: the Hero, then plain stacked sections that simply scroll
+(`src/components/sections/homepage-sections.tsx`): intro, services index,
+project photos, safety band, product groups (live from the catalog, left out
+if the API is unreachable), Pse LIRIU, process, contact CTA. It used to be a
+pinned, rotating GSAP scroll sequence; the client rejected that in October
+2026, so don't reintroduce scroll-driven pinning or panel transitions here.
 
 **Cart** (`src/lib/cart-context.tsx` + `cart-button.tsx`): localStorage-
 persisted, portalled to `document.body` (the navbar has a
@@ -119,7 +120,7 @@ stubs in the project directory; the real file is in `~/Downloads` (or
 
 **Known tooling gotcha**: the Claude-in-Chrome automation tab runs
 `document.hidden = true`, so `requestAnimationFrame` never fires there —
-any framer-motion/GSAP animation will look permanently "stuck at initial
+any framer-motion animation will look permanently "stuck at initial
 state" if you poll its style from that tab. This is a measurement
 artifact, not a real bug — verify layout/DOM facts instead, or force the
 animation's end-state styles manually before screenshotting, and trust

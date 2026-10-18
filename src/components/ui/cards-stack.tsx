@@ -18,7 +18,7 @@ interface CardStickyProps extends HTMLMotionProps<"div"> {
  * keeps working under reduced-motion.
  *
  * Adapted from a reference component built on the `motion` package; this
- * codebase already depends on `framer-motion` (see hero.tsx, story-scroll.tsx),
+ * codebase already depends on `framer-motion` (see hero.tsx),
  * so this uses that instead of adding a second, near-identical animation
  * library. The two packages share the same API for what's used here
  * (`motion.div`, `HTMLMotionProps`), so the swap is a straight import change.

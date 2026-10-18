@@ -85,8 +85,8 @@ export function ProjectsGallery() {
           <span aria-hidden className="h-px w-8 bg-red" />
         </p>
         {/* clamp(), not sm:/md: steps, to match the scale technique already
-            used for the homepage's big display headline (see
-            homepage-story.tsx) - it tracks viewport width continuously
+            used for the homepage's big display headlines (see
+            homepage-sections.tsx) - it tracks viewport width continuously
             instead of jumping at fixed breakpoints, so the box never has
             to wrap a word too large for it on some in-between width. */}
         <h1 className="max-w-full text-[clamp(1.75rem,6vw,3.5rem)] font-display font-semibold leading-[1.08] tracking-tight text-paper">

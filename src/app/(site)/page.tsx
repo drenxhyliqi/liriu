@@ -1,5 +1,5 @@
 import { Hero } from "@/components/sections/hero";
-import { HomepageStory } from "@/components/sections/homepage-story";
+import { HomepageSections } from "@/components/sections/homepage-sections";
 import { company } from "@/lib/constants";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -34,7 +34,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, "\\u003c") }}
       />
       <Hero />
-      <HomepageStory />
+      <HomepageSections />
     </main>
   );
 }
